@@ -45,13 +45,13 @@ namespace SimpleRtspPlayer.RawFramesDecoding.FFmpeg
             if (!transformParameters.RegionOfInterest.IsEmpty)
             {
                 sourceLeft =
-                    (int)(decodedVideoFrameParameters.Width * transformParameters.RegionOfInterest.Left);
+                    (int) (decodedVideoFrameParameters.Width * transformParameters.RegionOfInterest.Left);
                 sourceTop =
-                    (int)(decodedVideoFrameParameters.Height * transformParameters.RegionOfInterest.Top);
+                    (int) (decodedVideoFrameParameters.Height * transformParameters.RegionOfInterest.Top);
                 sourceWidth =
-                    (int)(decodedVideoFrameParameters.Width * transformParameters.RegionOfInterest.Width);
+                    (int) (decodedVideoFrameParameters.Width * transformParameters.RegionOfInterest.Width);
                 sourceHeight =
-                    (int)(decodedVideoFrameParameters.Height * transformParameters.RegionOfInterest.Height);
+                    (int) (decodedVideoFrameParameters.Height * transformParameters.RegionOfInterest.Height);
             }
 
             if (!transformParameters.TargetFrameSize.IsEmpty)
@@ -61,8 +61,8 @@ namespace SimpleRtspPlayer.RawFramesDecoding.FFmpeg
 
                 ScalingPolicy scalingPolicy = transformParameters.ScalePolicy;
 
-                float srcAspectRatio = (float)sourceWidth / sourceHeight;
-                float destAspectRatio = (float)scaledWidth / scaledHeight;
+                float srcAspectRatio = (float) sourceWidth / sourceHeight;
+                float destAspectRatio = (float) scaledWidth / scaledHeight;
 
                 if (scalingPolicy == ScalingPolicy.Auto)
                 {

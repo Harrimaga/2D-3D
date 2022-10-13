@@ -36,7 +36,7 @@ namespace SimpleRtspPlayer.RawFramesDecoding
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != GetType()) return false;
-            return Equals((TransformParameters)obj);
+            return Equals((TransformParameters) obj);
         }
 
         public override int GetHashCode()
@@ -45,8 +45,8 @@ namespace SimpleRtspPlayer.RawFramesDecoding
             {
                 var hashCode = RegionOfInterest.GetHashCode();
                 hashCode = (hashCode * 397) ^ TargetFrameSize.GetHashCode();
-                hashCode = (hashCode * 397) ^ (int)TargetFormat;
-                hashCode = (hashCode * 397) ^ (int)ScaleQuality;
+                hashCode = (hashCode * 397) ^ (int) TargetFormat;
+                hashCode = (hashCode * 397) ^ (int) ScaleQuality;
                 return hashCode;
             }
         }

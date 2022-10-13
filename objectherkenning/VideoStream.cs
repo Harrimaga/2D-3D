@@ -71,6 +71,7 @@ namespace Detection
 
         private void RtspClient_FrameReceived(object sender, RtspClientSharp.RawFrames.RawFrame e)
         {
+            Console.WriteLine("framereceived");
             if (_cancellationTokenSource == null || _cancellationTokenSource.IsCancellationRequested)
             {
                 return;
@@ -84,12 +85,15 @@ namespace Detection
             var codecId = DetectCodecId(rawVideoFrame);
             if (!_videoDecodersMap.TryGetValue(codecId, out FFmpegVideoDecoder decoder))
             {
+                Console.WriteLine("Decoder Created");
+
                 decoder = FFmpegVideoDecoder.CreateDecoder(codecId);
                 _videoDecodersMap.Add(codecId, decoder);
             }
             var decodedVideoFrame = decoder.TryDecode(rawVideoFrame);
             if (decodedVideoFrame != null)
             {
+
                 if (bmp != null)
                 {
                     bmp.Dispose();
@@ -113,7 +117,7 @@ namespace Detection
                 Image<Bgr, byte> imageCV = bmp.ToImage<Bgr, byte>();
 
                 CvInvoke.Imshow("test", imageCV);
-
+                Console.WriteLine("Image?");
             }
         }
 

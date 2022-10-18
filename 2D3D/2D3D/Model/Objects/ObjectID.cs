@@ -1,4 +1,4 @@
-﻿namespace _2D3D.Model
+﻿namespace From2Dto3D.Model
 {
 	struct ObjectID
 	{

@@ -1,4 +1,4 @@
-﻿namespace _2D3D.View
+﻿namespace From2Dto3D.View
 {
     class WPFViewer : IView
     {

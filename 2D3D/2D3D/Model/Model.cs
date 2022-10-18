@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2D3D.Model
+namespace From2Dto3D.Model
 {
 	internal class Model
 	{

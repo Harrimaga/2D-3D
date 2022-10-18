@@ -1,11 +1,11 @@
-﻿using _2D3D.View;
+﻿using From2Dto3D.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2D3D.Controller
+namespace From2Dto3D.Controller
 {
     internal class MainController
     {

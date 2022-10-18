@@ -1,7 +1,7 @@
-﻿using _2D3D.Controller;
-using _2D3D.View;
+﻿using From2Dto3D.Controller;
+using From2Dto3D.View;
 
-namespace _2D3D
+namespace From2Dto3D
 {
     internal class Program
     {

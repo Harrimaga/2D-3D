@@ -9,7 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\DetectedObject\" />
+    <Compile Remove="Model\DetectedObject\**" />
+    <EmbeddedResource Remove="Model\DetectedObject\**" />
+    <None Remove="Model\DetectedObject\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Test\" />
   </ItemGroup>
 

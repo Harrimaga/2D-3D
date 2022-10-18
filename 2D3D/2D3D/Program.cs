@@ -9,10 +9,11 @@ namespace From2Dto3D
         {
             IView view = getView(args[0]);
             MainController mc = new(view);
-
+			
         }
         static IView getView(string s)
         {
+			List<int> list = new List<int>();
             return s switch
             {
                 "Console" => new ConsoleViewer(),

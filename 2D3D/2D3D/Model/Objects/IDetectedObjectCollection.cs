@@ -1,15 +1,16 @@
 ﻿namespace From2Dto3D.Model
 {
-	interface IDetectedObjectCollection
+	interface IDetectedObjectCollection<T> :IEnumerable<DetectedObject>
 	{
-		public DetectedObject this[ObjectID id]
+		public DetectedObject this[T id]
 		{
 			get; set;
 		}
-		public void addObject(DetectedObject obj);
-		void addObject();
-		public void updateObject(ObjectID id);
-		public IEnumerable<DetectedObject> GetLiveObjects(float PredictabilityThreshold);
+		public bool addObject(DetectedObject obj, out T id);
+		public bool updateObject(DetectedObject obj, out T id);
+		public IEnumerable<DetectedObject> GetAllObjects(float PredictabilityThreshold = 100);
+		public int Count();
+		public bool remove(T id);
+		public bool contains(T id);
 	}
-
 }

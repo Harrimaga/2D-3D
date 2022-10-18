@@ -4,5 +4,15 @@
 	internal class ConsoleViewer : IView
     {
         public event EventHandler<EventArgs> ViewChanged;
-    }
+		public void t()
+		{
+
+			ViewChanged.Invoke(this, EventArgs.Empty);
+		}
+	}
+	class eventdinges : EventArgs {
+		string path;
+
+	}
+
 }

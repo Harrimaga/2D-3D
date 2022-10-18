@@ -8,7 +8,7 @@ namespace From2Dto3D.Model
 {
 	internal class Model
 	{
-		IDetectedObjectCollection Objects;
+		IDetectedObjectCollection<int> Objects;
 		public Model()
 		{
 			Objects = new DetectedObjectList();

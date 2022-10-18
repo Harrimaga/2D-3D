@@ -16,6 +16,5 @@ namespace From2Dto3D.Controller
             this.view = view;
             
         }
-
     }
 }

@@ -1,9 +1,0 @@
-<Project>
- <PropertyGroup>
-    <Version>4.4.0.4099</Version>
-    <Company>Emgu Corporation</Company>
-    <Authors>Emgu Corporation</Authors>
-    <Product>Emgu.CV</Product>
-    <Copyright>Emgu Corporation 2020</Copyright>
- </PropertyGroup>
-</Project>

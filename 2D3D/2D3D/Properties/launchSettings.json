@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ConsoleView": {
+      "commandName": "Project",
+      "commandLineArgs": "Console"
+    },
+    "WPF": {
+      "commandName": "Project",
+      "commandLineArgs": "WPF"
+    }
+  }
+}

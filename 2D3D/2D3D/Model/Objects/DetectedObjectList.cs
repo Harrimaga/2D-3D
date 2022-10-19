@@ -2,9 +2,14 @@
 
 namespace From2Dto3D.Model
 {
-	class DetectedObjectList : IDetectedObjectCollection<int>
+	class DetectedObjectList : IDetectedObjectCollection
 	{
+		private int IDIndexer;
 		private List<DetectedObject> objects;
+		int ICollection<DetectedObject>.Count => objects.Count;
+
+		public bool IsReadOnly => false;
+
 		public DetectedObjectList()
 		{
 			objects = new();
@@ -13,33 +18,33 @@ namespace From2Dto3D.Model
 		{
 			objects = new(capacity);
 		}
-		public DetectedObjectList(IEnumerable<DetectedObject> em)
+		public DetectedObjectList(ICollection<DetectedObject> em)
 		{
-			objects = new(em);
+			objects = new(em.Count);
+			foreach(DetectedObject o in em) Add(o);
 		}
-		public DetectedObject this[int index] 
+		public DetectedObject this[int id]
 		{
-			get
-			{
-				if(index > Count()) 
-					throw new IndexOutOfRangeException($"{index} is larger than the current list size{Count()}");
-				return objects[index];
-			}
-			set => objects.Add(value);
+			get => Contains(id) ? objects[id] : throw new KeyNotFoundException($"{id} was not found");
+			set => Add(value);
 		}
-		public bool addObject(DetectedObject obj, out int id)
+		public void Add(DetectedObject obj)
 		{
+			IDIndexer++;
+			obj.ID = IDIndexer;
 			objects.Add(obj);
-			id = Count();
-			return true;
 		}
-		public bool contains(int id) => throw new NotImplementedException();
-		public int Count() => objects.Count;
-		public IEnumerable<DetectedObject> GetAllObjects(float PredictabilityThreshold = 100) => throw new NotImplementedException();
-		public IEnumerator<DetectedObject> GetEnumerator() => throw new NotImplementedException();
-		public bool remove(int id) => throw new NotImplementedException();
-		public bool updateObject(DetectedObject obj, out int id) => throw new NotImplementedException();
-		IEnumerator IEnumerable.GetEnumerator() => throw new NotImplementedException();
+		public void Clear()
+		{
+			IDIndexer = 0;
+			objects.Clear();
+		}
+		public bool Contains(int id) => objects.Any(x => x.ID == id);
+		public bool Contains(DetectedObject item) => objects.Any(x => x == item);
+		public void CopyTo(DetectedObject[] array, int arrayIndex) => objects.CopyTo(new DetectedObject[objects.Count - arrayIndex], arrayIndex);
+		public bool Remove(int id) => objects.RemoveAll(x => x.ID == id) > 0;
+		public bool Remove(DetectedObject item) => objects.Remove(item);
+		public IEnumerator<DetectedObject> GetEnumerator() => objects.GetEnumerator();
+		IEnumerator IEnumerable.GetEnumerator() => objects.GetEnumerator();
 	}
-
 }

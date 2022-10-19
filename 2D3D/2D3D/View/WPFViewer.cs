@@ -1,7 +1,13 @@
-﻿namespace From2Dto3D.View
+﻿using From2Dto3D.Model;
+namespace From2Dto3D.View
 {
-    class WPFViewer : IView
+    class WPFViewer : Viewer
     {
-        public event EventHandler<EventArgs> ViewChanged;
-    }
+		public WPFViewer(MainModel mainModel) : base(mainModel)
+		{
+
+		}
+
+		internal override event EventHandler<EventArgs>? ViewChanged;
+	}
 }

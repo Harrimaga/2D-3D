@@ -1,18 +1,13 @@
-﻿namespace From2Dto3D.View
+﻿using From2Dto3D.Model;
+
+namespace From2Dto3D.View
 {
 	//TODO Implement ConsoleViewer
-	internal class ConsoleViewer : IView
-    {
-        public event EventHandler<EventArgs> ViewChanged;
-		public void t()
+	internal class ConsoleViewer : Viewer
+	{
+		public ConsoleViewer(MainModel mainModel) : base(mainModel)
 		{
 
-			ViewChanged.Invoke(this, EventArgs.Empty);
 		}
 	}
-	class eventdinges : EventArgs {
-		string path;
-
-	}
-
 }

@@ -5,7 +5,7 @@ namespace From2Dto3D.View
     {
 		public WPFViewer(MainModel mainModel) : base(mainModel)
 		{
-
+			
 		}
 
 		internal override event EventHandler<EventArgs>? ViewChanged;

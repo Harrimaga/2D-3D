@@ -1,4 +1,4 @@
-﻿namespace _2D3D.Model
+﻿namespace Model
 {
 	public class Config
 	{

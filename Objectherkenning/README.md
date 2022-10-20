@@ -1,7 +1,3 @@
 # Installation
 
-1) Download the following [EmguCV's cuda libaries](https://sourceforge.net/projects/emgucv/files/emgucv/4.4.0/libemgucv-windesktop_x64-cuda-4.4.0.4099.zip.selfextract.exe/download) and extract it. After extracting, copy the "libs" folder included in the extracted flder and paste it inside References/EmguCV (replace the existing libs folder).
-
-2) Add the shared Emgu.CV.Runtime.Windows. This can be done by clicking on "file" in the tabbar, "add" and after that "Existing Project". Add References/EmguCV/Emgu.CV.Runtime/Windows/Emgu.CV.Runtime/Windows.shproj.
-
-3) After this, activate the shared project references called Emgu.CV.Runtime.Windows. You can find this in the Shared projects references. Lastly add the references Emgu.CV.Bitmap.dll and Emgu.CV.Platform.NetStandard.dll in the References/EmguCV/libs map.
+Download the following [EmguCV's cuda libaries]([https://sourceforge.net/projects/emgucv/files/emgucv/4.4.0 /libemgucv-windesktop_x64-cuda-4.4.0.4099.zip.selfextract.exe/download](https://github.com/emgucv/emgucv/releases/download/4.5.5/libemgucv-windesktop_x64-cuda-4.5.5.4823.zip.selfextract.exe)) and extract it to a newly created folder (You need to create this new folder yourself). After extracting, copy the "libs" folder included in the extracted flder and paste it inside References/EmguCV (replace the existing libs folder) this folder is placed in the project.

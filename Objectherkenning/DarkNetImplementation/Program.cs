@@ -1,16 +1,7 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Emgu.CV.Dnn;
-using Emgu.CV;
-using Emgu.CV.Util;
+﻿using Emgu.CV;
 using Emgu.CV.Structure;
 using System.Drawing;
 using System.Diagnostics;
-using System.Reflection;
 using DarkNetImplementation.Models;
 
 namespace DarkNetImplementation
@@ -25,6 +16,9 @@ namespace DarkNetImplementation
             string video = @"..\..\..\Resources\test.mp4";
             int fps = 1000;
 
+            int resizeImageWidth = 200;
+            int resizeImageHeight = 200;
+
             //VideoCapture cap = new VideoCapture("rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4");
             //VideoCapture cap = new VideoCapture("http://192.168.0.4:4747/video");
             //VideoCapture cap = new VideoCapture("http://10.6.0.2:4747/video");
@@ -38,13 +32,15 @@ namespace DarkNetImplementation
             //GPU
             if (Emgu.CV.Cuda.CudaInvoke.HasCuda)
             {
-                Console.WriteLine("GPUUUUU");
+                Console.WriteLine("Running program with GPU");
                 model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Cuda, PreferredTarget.Cuda);
             }
             else
             {
+                Console.WriteLine("Running program on CPU");
                 model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Default, PreferredTarget.Cpu);
             }
+
             model.NMSThreshold = 0.4f;
             model.ConfidenceThreshold = 0.5f;
 
@@ -65,31 +61,31 @@ namespace DarkNetImplementation
                     break;
                 Stopwatch watch = new Stopwatch();
                 watch.Start();
-                List<YoloPrediction> results = model.Predict(frame.ToBitmap(), 200, 200);
+                List<YoloPrediction> results = model.Predict(frame.ToBitmap(), resizeImageWidth, resizeImageHeight);
                 watch.Stop();
                 Console.WriteLine($"Frame Processing time: {watch.ElapsedMilliseconds} ms." + $" FPS: {1000f / watch.ElapsedMilliseconds}");
 
-                foreach (YoloPrediction p in results)
-                {
-                    //if(p.Label == "Person")
-                    //{
-                    double xPosition = (p.Rectangle.X + p.Rectangle.Width) / 2;
-                    double yPosition = (p.Rectangle.Y + p.Rectangle.Height) / 2;
-                    Console.WriteLine("Found: " + p.Label + " at position " + xPosition + "," + yPosition);
-                    //}
-                }
-                foreach (var item in results)
-                {
-                    string text = item.Label + " " + item.Confidence;
-                    CvInvoke.Rectangle(frame, new Rectangle(item.Rectangle.X - 2, item.Rectangle.Y - 33, item.Rectangle.Width + 4, 40), new MCvScalar(255, 0, 0), -1);
-                    CvInvoke.PutText(frame, text, new Point(item.Rectangle.X, item.Rectangle.Y - 15), Emgu.CV.CvEnum.FontFace.HersheySimplex, 0.6, new MCvScalar(255, 255, 255), 2);
-                    CvInvoke.Rectangle(frame, item.Rectangle, new MCvScalar(255, 0, 0), 3);
-                }
-                CvInvoke.Imshow("test", frame);
+                ShowImage(results, frame);
+                
                 CvInvoke.WaitKey(1000 / fps);
             }
 
             Console.ReadKey();
+        }
+        private static void ShowImage(List<YoloPrediction> input, Mat frame)
+        {
+            foreach (var item in input)
+            {
+                double xPosition = (item.Rectangle.X + item.Rectangle.Width) / 2;
+                double yPosition = (item.Rectangle.Y + item.Rectangle.Height) / 2;
+                Console.WriteLine("Found: " + item.Label + " at position " + xPosition + "," + yPosition);
+
+                string text = item.Label + " " + item.Confidence;
+                CvInvoke.Rectangle(frame, new Rectangle(item.Rectangle.X - 2, item.Rectangle.Y - 33, item.Rectangle.Width + 4, 40), new MCvScalar(255, 0, 0), -1);
+                CvInvoke.PutText(frame, text, new Point(item.Rectangle.X, item.Rectangle.Y - 15), Emgu.CV.CvEnum.FontFace.HersheySimplex, 0.6, new MCvScalar(255, 255, 255), 2);
+                CvInvoke.Rectangle(frame, item.Rectangle, new MCvScalar(255, 0, 0), 3);
+            }
+            CvInvoke.Imshow("Output", frame);
         }
     }
 }

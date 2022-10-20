@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DarknetYolo.Models
+namespace DarkNetImplementation.Models
 {
     public class YoloPrediction
     {

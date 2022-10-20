@@ -8,10 +8,10 @@ using Emgu.CV;
 using Emgu.CV.Util;
 using System.Drawing;
 using Emgu.CV.Structure;
-using DarknetYolo.Models;
 using System.IO;
+using DarkNetImplementation.Models;
 
-namespace DarknetYolo
+namespace DarkNetImplementation
 {
     public class DarknetYOLO
     {
@@ -84,7 +84,7 @@ namespace DarknetYolo
             int height = inputImage.Height;
             VectorOfMat layerOutputs = new VectorOfMat();
             string[] outNames = Network.UnconnectedOutLayersNames;
-            var blob = DnnInvoke.BlobFromImage(inputImage.ToImage<Bgr, byte>(), 1 / 255f, new System.Drawing.Size(resizedWidth, resizedHeight), swapRB: true, crop: false);
+            var blob = DnnInvoke.BlobFromImage(inputImage.ToImage<Bgr, byte>(), 1 / 255f, new Size(resizedWidth, resizedHeight), swapRB: true, crop: false);
             Network.SetInput(blob);
             Network.Forward(layerOutputs, outNames);
 
@@ -117,8 +117,8 @@ namespace DarknetYolo
                         lo[i, 2] *= width;
                         lo[i, 3] *= height;
 
-                        int x = (int)(lo[i, 0] - (lo[i, 2] / 2));
-                        int y = (int)(lo[i, 1] - (lo[i, 3] / 2));
+                        int x = (int)(lo[i, 0] - lo[i, 2] / 2);
+                        int y = (int)(lo[i, 1] - lo[i, 3] / 2);
 
                         var rect = new Rectangle(x, y, (int)lo[i, 2], (int)lo[i, 3]);
 

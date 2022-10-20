@@ -11,20 +11,19 @@ using Emgu.CV.Structure;
 using System.Drawing;
 using System.Diagnostics;
 using System.Reflection;
-using DarknetYolo;
-using DarknetYolo.Models;
+using DarkNetImplementation.Models;
 
-namespace YOLOv4_TEST
+namespace DarkNetImplementation
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string labels   = @"NetworkModels\coco.names";
-            string weights  = @"NetworkModels\yolov4-tiny.weights";
-            string cfg      = @"NetworkModels\yolov4-tiny.cfg";
-            string video    = @"Resources\test.mp4";
-            int fps         = 1000;
+            string labels = @"..\..\..\NetworkModels\coco.names";
+            string weights = @"..\..\..\NetworkModels\yolov4-tiny.weights";
+            string cfg = @"..\..\..\NetworkModels\yolov4-tiny.cfg";
+            string video = @"..\..\..\Resources\test.mp4";
+            int fps = 1000;
 
             //VideoCapture cap = new VideoCapture("rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4");
             //VideoCapture cap = new VideoCapture("http://192.168.0.4:4747/video");
@@ -35,7 +34,7 @@ namespace YOLOv4_TEST
             Console.WriteLine("[INFO] Loading Model...");
             //GPU
             DarknetYOLO model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Cuda, PreferredTarget.Cuda);
-            
+
             //CPU
             //DarknetYOLO model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Default, PreferredTarget.Cpu);
             model.NMSThreshold = 0.4f;
@@ -62,7 +61,7 @@ namespace YOLOv4_TEST
                 watch.Stop();
                 Console.WriteLine($"Frame Processing time: {watch.ElapsedMilliseconds} ms." + $" FPS: {1000f / watch.ElapsedMilliseconds}");
 
-                foreach(YoloPrediction p in results)
+                foreach (YoloPrediction p in results)
                 {
                     //if(p.Label == "Person")
                     //{
@@ -79,7 +78,7 @@ namespace YOLOv4_TEST
                     CvInvoke.Rectangle(frame, item.Rectangle, new MCvScalar(255, 0, 0), 3);
                 }
                 CvInvoke.Imshow("test", frame);
-                CvInvoke.WaitKey(1000/fps);
+                CvInvoke.WaitKey(1000 / fps);
             }
 
             Console.ReadKey();

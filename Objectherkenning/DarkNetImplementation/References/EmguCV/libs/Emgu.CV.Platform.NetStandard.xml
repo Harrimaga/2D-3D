@@ -413,7 +413,7 @@
             <param name="image">the written frame</param>
             <returns>True on success, false otherwise</returns>
         </member>
-        <member name="M:Emgu.CV.CvInvoke.Init">
+        <member name="M:Emgu.CV.CvInvoke.CheckLibraryLoaded">
             <summary>
             Check to make sure all the unmanaged libraries are loaded
             </summary>
@@ -444,7 +444,7 @@
             Attempts to load opencv modules from the specific location
             </summary>
             <param name="loadDirectory">The directory where the unmanaged modules will be loaded. If it is null, the default location will be used.</param>
-            <param name="unmanagedModules">The names of opencv modules. e.g. "opencv_core.dll" on windows.</param>
+            <param name="unmanagedModules">The names of opencv modules. e.g. "opencv_cxcore.dll" on windows.</param>
             <returns>True if all the modules has been loaded successfully</returns>
             <remarks>If <paramref name="loadDirectory"/> is null, the default location on windows is the dll's path appended by either "x64" or "x86", depends on the applications current mode.</remarks>
         </member>
@@ -486,7 +486,7 @@
             </summary>
             <param name="depth">The type of depth</param>
             <param name="channels">The number of channels</param>
-            <returns>An integer that represent a mat type</returns>
+            <returns>An interger tha represent a mat type</returns>
         </member>
         <member name="M:Emgu.CV.CvInvoke.SanityCheck">
             <summary>
@@ -2686,6 +2686,291 @@
         <member name="F:Emgu.CV.CvInvoke.OpencvFFMpegLibrary">
             <summary>
             The file name of the opencv_ffmpeg library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCoreLibrary">
+            <summary>
+            The file name of the core library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvImgprocLibrary">
+            <summary>
+            The file name of the imgproc library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvVideoLibrary">
+            <summary>
+            The file name of the video library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvFlannLibrary">
+            <summary>
+            The file name of the flann library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvMlLibrary">
+            <summary>
+            The file name of the ml library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvImgcodecsLibrary">
+            <summary>
+            The file name of the imgcodecs library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvVideoioLibrary">
+            <summary>
+            The file name of the videoio library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvHighguiLibrary">
+            <summary>
+            The file name of the highgui library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvObjdetectLibrary">
+            <summary>
+            The file name of the objdetect library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvFeatures2dLibrary">
+            <summary>
+            The file name of the features2d library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCalib3dLibrary">
+            <summary>
+            The file name of the calib3d library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudaarithmLibrary">
+            <summary>
+            The file name of the cudaarithm library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudawarpingLibrary">
+            <summary>
+            The file name of the cudawarping library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudafiltersLibrary">
+            <summary>
+            The file name of the cudafilters library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudaimgprocLibrary">
+            <summary>
+            The file name of the cudaimgproc library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudalegacyLibrary">
+            <summary>
+            The file name of the cudalegacy library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudaoptflowLibrary">
+            <summary>
+            The file name of the cudaoptflow library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudastereoLibrary">
+            <summary>
+            The file name of the cudastereo library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudabgsegmLibrary">
+            <summary>
+            The file name of the cudabgsegm library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudafeatures2dLibrary">
+            <summary>
+            The file name of the cudafeatures2d library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudacodecLibrary">
+            <summary>
+            The file name of the cudacodec library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudaobjdetectLibrary">
+            <summary>
+            The file name of the cudaobjdetect library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvPhotoLibrary">
+            <summary>
+            The file name of the photo library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvSuperresLibrary">
+            <summary>
+            The file name of the superres library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvVideostabLibrary">
+            <summary>
+            The file name of the videostab library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvShapeLibrary">
+            <summary>
+            The file name of the shape library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvCudevLibrary">
+            <summary>
+            The file name of the cudev library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvFaceLibrary">
+            <summary>
+            The file name of the face library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvXimgprocLibrary">
+            <summary>
+            The file name of the ximgproc library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvXobjdetectLibrary">
+            <summary>
+            The file name of the xobjdetect library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvXfeatures2dLibrary">
+            <summary>
+            The file name of the xfeatures2d library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvXphotoLibrary">
+            <summary>
+            The file name of the xphoto library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvBgsegmLibrary">
+            <summary>
+            The file name of the bgsegm library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvOptflowLibrary">
+            <summary>
+            The file name of the optflow library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvStitchingLibrary">
+            <summary>
+            The file name of the stitching library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvPlotLibrary">
+            <summary>
+            The file name of the plot library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvDnnLibrary">
+            <summary>
+            The file name of the dnn library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvDnn_objdetectLibrary">
+            <summary>
+            The file name of the dnn_objdetect library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvDnn_superresLibrary">
+            <summary>
+            The file name of the dnn_superres library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvArucoLibrary">
+            <summary>
+            The file name of the aruco library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvFuzzyLibrary">
+            <summary>
+            The file name of the fuzzy library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvVizLibrary">
+            <summary>
+            The file name of the viz library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvBioinspiredLibrary">
+            <summary>
+            The file name of the bioinspired library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvTextLibrary">
+            <summary>
+            The file name of the text library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvTrackingLibrary">
+            <summary>
+            The file name of the tracking library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvDpmLibrary">
+            <summary>
+            The file name of the dpm library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvSaliencyLibrary">
+            <summary>
+            The file name of the saliency library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvImg_hashLibrary">
+            <summary>
+            The file name of the img_hash library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvPhase_unwrappingLibrary">
+            <summary>
+            The file name of the phase_unwrapping library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvFreetypeLibrary">
+            <summary>
+            The file name of the freetype library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvHfsLibrary">
+            <summary>
+            The file name of the hfs library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvQualityLibrary">
+            <summary>
+            The file name of the quality library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvStereoLibrary">
+            <summary>
+            The file name of the stereo library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvSurface_matchingLibrary">
+            <summary>
+            The file name of the surface_matching library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvAlphamatLibrary">
+            <summary>
+            The file name of the alphamat library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvIntensity_transformLibrary">
+            <summary>
+            The file name of the intensity_transform library
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.CvInvoke.OpencvRapidLibrary">
+            <summary>
+            The file name of the rapid library
             </summary>
         </member>
         <member name="F:Emgu.CV.CvInvoke.OpenCVModuleList">
@@ -12222,19 +12507,19 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfByte.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfByte.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfByte.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -12326,19 +12611,19 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfColorPoint.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfColorPoint.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfColorPoint.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -12530,19 +12815,19 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfDMatch.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfDMatch.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfDMatch.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -12634,19 +12919,19 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfDouble.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfDouble.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfDouble.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -12738,19 +13023,19 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfFloat.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfFloat.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfFloat.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -12842,19 +13127,19 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfInt.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfInt.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfInt.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -12946,19 +13231,19 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfKeyPoint.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfKeyPoint.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfKeyPoint.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -13074,14 +13359,14 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfMat.Push``1(Emgu.CV.CvArray{``0})">
             <summary>
-            Convert a CvArray to Mat and push it into the vector
+            Convert a CvArray to cv::Mat and push it into the vector
             </summary>
             <typeparam name="TDepth">The type of depth of the cvArray</typeparam>
             <param name="cvArray">The cvArray to be pushed into the vector</param>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfMat.Push``1(Emgu.CV.CvArray{``0}[])">
             <summary>
-            Convert a group of CvArray to Mat and push them into the vector
+            Convert a group of CvArray to cv::Mat and push them into the vector
             </summary>
             <typeparam name="TDepth">The type of depth of the cvArray</typeparam>
             <param name="values">The values to be pushed to the vector</param>
@@ -13254,19 +13539,19 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfPoint.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfPoint.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfPoint.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -13358,19 +13643,19 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfPoint3D32F.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfPoint3D32F.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfPoint3D32F.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -13462,19 +13747,19 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfPointF.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfPointF.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfPointF.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -13566,127 +13851,23 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfRect.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfRect.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfRect.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
         <member name="P:Emgu.CV.Util.VectorOfRect.SizeOfItemInBytes">
-            <summary>
-            The size of the item in this Vector, counted as size in bytes.
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.Util.VectorOfSize">
-            <summary>
-            Wrapped class of the C++ standard vector of Size.
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Constructor used to deserialize runtime serialized object
-            </summary>
-            <param name="info">The serialization info</param>
-            <param name="context">The streaming context</param>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            A function used for runtime serialization of the object
-            </summary>
-            <param name="info">Serialization info</param>
-            <param name="context">Streaming context</param>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.#ctor">
-            <summary>
-            Create an empty standard vector of Size
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.#ctor(System.Int32)">
-            <summary>
-            Create an standard vector of Size of the specific size
-            </summary>
-            <param name="size">The size of the vector</param>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.#ctor(System.Drawing.Size[])">
-            <summary>
-            Create an standard vector of Size with the initial values
-            </summary>
-            <param name="values">The initial values</param>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.Push(System.Drawing.Size[])">
-            <summary>
-            Push an array of value into the standard vector
-            </summary>
-            <param name="value">The value to be pushed to the vector</param>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.Push(Emgu.CV.Util.VectorOfSize)">
-            <summary>
-            Push multiple values from the other vector into this vector
-            </summary>
-            <param name="other">The other vector, from which the values will be pushed to the current vector</param>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.ToArray">
-            <summary>
-            Convert the standard vector to an array of Size
-            </summary>
-            <returns>An array of Size</returns>
-        </member>
-        <member name="P:Emgu.CV.Util.VectorOfSize.Size">
-            <summary>
-            Get the size of the vector
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.Clear">
-            <summary>
-            Clear the vector
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Util.VectorOfSize.StartAddress">
-            <summary>
-            The pointer to the first element on the vector. In case of an empty vector, IntPtr.Zero will be returned.
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Util.VectorOfSize.Item(System.Int32)">
-            <summary>
-            Get the item in the specific index
-            </summary>
-            <param name="index">The index</param>
-            <returns>The item in the specific index</returns>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.DisposeObject">
-            <summary>
-            Release the standard vector
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.GetInputArray">
-            <summary>
-            Get the data as InputArray
-            </summary>
-            <returns>The input array </returns>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.GetOutputArray">
-            <summary>
-            Get the data as OutputArray
-            </summary>
-            <returns>The output array </returns>
-        </member>
-        <member name="M:Emgu.CV.Util.VectorOfSize.GetInputOutputArray">
-            <summary>
-            Get the data as InputOutputArray
-            </summary>
-            <returns>The input output array </returns>
-        </member>
-        <member name="P:Emgu.CV.Util.VectorOfSize.SizeOfItemInBytes">
             <summary>
             The size of the item in this Vector, counted as size in bytes.
             </summary>
@@ -13774,19 +13955,19 @@
         </member>
         <member name="M:Emgu.CV.Util.VectorOfTriangle2DF.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfTriangle2DF.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Util.VectorOfTriangle2DF.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -17967,76 +18148,6 @@
             Return the pointer to the algorithm object
             </summary>
         </member>
-        <member name="T:Emgu.CV.Tracker">
-            <summary>
-            Long-term tracker
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.Tracker._trackerPtr">
-            <summary>
-            The native pointer to the tracker
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Tracker.Init(Emgu.CV.Mat,System.Drawing.Rectangle)">
-            <summary>
-            Initialize the tracker with a know bounding box that surrounding the target.
-            </summary>
-            <param name="image">The initial frame</param>
-            <param name="boundingBox">The initial bounding box</param>
-        </member>
-        <member name="M:Emgu.CV.Tracker.Update(Emgu.CV.Mat,System.Drawing.Rectangle@)">
-            <summary>
-            Update the tracker, find the new most likely bounding box for the target.
-            </summary>
-            <param name="image">The current frame</param>
-            <param name="boundingBox">The bounding box that represent the new target location, if true was returned, not modified otherwise</param>
-            <returns>True means that target was located and false means that tracker cannot locate target in current frame. Note, that latter does not imply that tracker has failed, maybe target is indeed missing from the frame (say, out of sight)</returns>
-        </member>
-        <member name="M:Emgu.CV.Tracker.DisposeObject">
-            <summary>
-            Release the unmanaged memory associated with this tracker
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.TrackerGOTURN">
-            <summary>
-            GOTURN is kind of trackers based on Convolutional Neural Networks (CNN). While taking all advantages of CNN trackers, GOTURN is much faster due to offline training without online fine-tuning nature. GOTURN tracker addresses the problem of single target tracking: given a bounding box label of an object in the first frame of the video, we track that object through the rest of the video. NOTE: Current method of GOTURN does not handle occlusions; however, it is fairly robust to viewpoint changes, lighting changes, and deformations. Inputs of GOTURN are two RGB patches representing Target and Search patches resized to 227x227. Outputs of GOTURN are predicted bounding box coordinates, relative to Search patch coordinate system, in format X1,Y1,X2,Y2.
-            </summary>
-            <remarks>Original paper is here: http://davheld.github.io/GOTURN/GOTURN.pdf As long as original authors implementation: https://github.com/davheld/GOTURN#train-the-tracker Implementation of training algorithm is placed in separately here due to 3d-party dependencies: https://github.com/Auron-X/GOTURN_Training_Toolkit GOTURN architecture goturn.prototxt and trained model goturn.caffemodel are accessible on opencv_extra GitHub repository.</remarks>
-        </member>
-        <member name="M:Emgu.CV.TrackerGOTURN.#ctor">
-            <summary>
-            Create a GOTURN tracker
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.TrackerGOTURN.DisposeObject">
-            <summary>
-            Release the unmanaged resources associated with this tracker
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.TrackerMIL">
-            <summary>
-            The MIL algorithm trains a classifier in an online manner to separate the object from the background.
-            Multiple Instance Learning avoids the drift problem for a robust tracking.
-            Original code can be found here http://vision.ucsd.edu/~bbabenko/project_miltrack.shtml
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.TrackerMIL.#ctor(System.Single,System.Int32,System.Single,System.Single,System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Creates a MIL Tracker
-            </summary>
-            <param name="samplerInitInRadius">radius for gathering positive instances during init</param>
-            <param name="samplerInitMaxNegNum">negative samples to use during init</param>
-            <param name="samplerSearchWinSize">size of search window</param>
-            <param name="samplerTrackInRadius">radius for gathering positive instances during tracking</param>
-            <param name="samplerTrackMaxPosNum">positive samples to use during tracking</param>
-            <param name="samplerTrackMaxNegNum">negative samples to use during tracking</param>
-            <param name="featureSetNumFeatures">features</param>
-        </member>
-        <member name="M:Emgu.CV.TrackerMIL.DisposeObject">
-            <summary>
-            Release all the unmanaged memory associated with this tracker
-            </summary>
-        </member>
         <member name="T:Emgu.CV.VariationalRefinement">
             <summary>
             This class implements variational refinement of the input flow field.
@@ -21732,11 +21843,6 @@
         <member name="F:Emgu.CV.Dnn.Target.CudaFp16">
             <summary>
             Cuda fp16
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.Dnn.Target.HDDL">
-            <summary>
-            HDDL
             </summary>
         </member>
         <member name="T:Emgu.CV.CascadeClassifier">
@@ -26808,11 +26914,6 @@
             Retrieve all the contours and reconstructs the full hierarchy of nested contours 
             </summary>
         </member>
-        <member name="F:Emgu.CV.CvEnum.RetrType.Floodfill">
-            <summary>
-            Flood fill type
-            </summary>
-        </member>
         <member name="T:Emgu.CV.CvEnum.RobustEstimationAlgorithm">
             <summary>
             Type of Robust Estimation Algorithm
@@ -28176,19 +28277,19 @@
         </member>
         <member name="M:Emgu.CV.OCR.VectorOfTesseractResult.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.OCR.VectorOfTesseractResult.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.OCR.VectorOfTesseractResult.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -33211,6 +33312,11 @@
             Base class for 1st and 2nd stages of Neumann and Matas scene text detection algorithm
             </summary>
         </member>
+        <member name="F:Emgu.CV.Text.ERFilter._sharedPtr">
+            <summary>
+            The native pointer to the shared object.
+            </summary>
+        </member>
         <member name="M:Emgu.CV.Text.ERFilter.DisposeObject">
             <summary>
             Release all the unmanaged memory associate with this ERFilter
@@ -33297,9 +33403,6 @@
             </summary>
         </member>
         <member name="T:Emgu.CV.Text.TextInvoke">
-            <summary>
-            This class wraps the functional calls to the OpenCV Text modules
-            </summary>
             <summary>
             This class wraps the functional calls to the OpenCV Text modules
             </summary>
@@ -33464,46 +33567,6 @@
             <param name="imageWidth">The source image width</param>
             <returns>The center of the region</returns>
         </member>
-        <member name="T:Emgu.CV.Text.TextDetectorCNN">
-            <summary>
-            This class provides the functionality of text bounding box detection. This class find bounding boxes of text words given an input image.
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Text.TextDetectorCNN.#ctor(System.String,System.String,System.Drawing.Size[])">
-            <summary>
-            Creates an instance of the TextDetectorCNN class using the provided parameters.
-            </summary>
-            <param name="modelArchFilename">The relative or absolute path to the prototxt file describing the classifiers architecture.</param>
-            <param name="modelWeightsFilename">The relative or absolute path to the file containing the pretrained weights of the model in caffe-binary form.</param>
-            <param name="detectionSizes">A list of sizes for multi-scale detection. The values[(300,300),(700,500),(700,300),(700,700),(1600,1600)] are recommended to achieve the best quality.</param>
-        </member>
-        <member name="T:Emgu.CV.Text.TextDetectorCNN.TextRegion">
-            <summary>
-            The detect result
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.Text.TextDetectorCNN.TextRegion.BBox">
-            <summary>
-            The bounding box
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.Text.TextDetectorCNN.TextRegion.Confident">
-            <summary>
-            The confident
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Text.TextDetectorCNN.Detect(Emgu.CV.IInputArray)">
-            <summary>
-            Find bounding boxes of text words given an input image.
-            </summary>
-            <param name="inputImage">An image expected to be a CV_U8C3 of any size</param>
-            <returns>The text regions found.</returns>
-        </member>
-        <member name="M:Emgu.CV.Text.TextDetectorCNN.DisposeObject">
-            <summary>
-            Release all the unmanaged memory associate with this TextDetector
-            </summary>
-        </member>
         <member name="T:Emgu.CV.Text.VectorOfERStat">
             <summary>
             Wrapped class of the C++ standard vector of ERStat.
@@ -33587,19 +33650,19 @@
         </member>
         <member name="M:Emgu.CV.Text.VectorOfERStat.GetInputArray">
             <summary>
-            Get the data as InputArray
+            Get the pointer to cv::_InputArray
             </summary>
             <returns>The input array </returns>
         </member>
         <member name="M:Emgu.CV.Text.VectorOfERStat.GetOutputArray">
             <summary>
-            Get the data as OutputArray
+            Get the pointer to cv::_OutputArray
             </summary>
             <returns>The output array </returns>
         </member>
         <member name="M:Emgu.CV.Text.VectorOfERStat.GetInputOutputArray">
             <summary>
-            Get the data as InputOutputArray
+            Get the pointer to cv::_InputOutputArray
             </summary>
             <returns>The input output array </returns>
         </member>
@@ -33796,11 +33859,6 @@
             Release all the unmanaged memory associated with this background model.
             </summary>
         </member>
-        <member name="T:Emgu.CV.BgSegm.BgSegmInvoke">
-            <summary>
-            Entry points for the BgSegm module.
-            </summary>
-        </member>
         <member name="T:Emgu.CV.BgSegm.BackgroundSubtractorGMG">
             <summary>
             Background Subtractor module based on the algorithm given in:
@@ -33954,6 +34012,11 @@
             Release all the unmanaged memory associated with this background model.
             </summary>
         </member>
+        <member name="T:Emgu.CV.ContribInvoke">
+            <summary>
+            Class that contains entry points for the Contrib module.
+            </summary>
+        </member>
         <member name="T:Emgu.CV.XImgproc.DisparityWLSFilter">
             <summary>
             Disparity map filter based on Weighted Least Squares filter (in form of Fast Global Smoother that is a lot faster than traditional Weighted Least Squares filter implementations) and optional use of left-right-consistency-based confidence to refine the results in half-occlusions and uniform areas.
@@ -34015,7 +34078,7 @@
             Extended Image Processing
             </summary>
         </member>
-        <member name="M:Emgu.CV.XImgproc.XImgprocInvoke.Filter(Emgu.CV.XImgproc.IDisparityFilter,Emgu.CV.IInputArray,Emgu.CV.IInputArray,Emgu.CV.IOutputArray,Emgu.CV.IInputArray,System.Drawing.Rectangle,Emgu.CV.IInputArray)">
+        <member name="M:Emgu.CV.XImgproc.XImgprocInvoke.Filter(Emgu.CV.XImgproc.IDisparityFilter,Emgu.CV.IInputArray,Emgu.CV.IOutputArray,Emgu.CV.IOutputArray,Emgu.CV.IInputArray,System.Drawing.Rectangle,Emgu.CV.IInputArray)">
             <summary>
             Apply filtering to the disparity map.
             </summary>
@@ -35084,17 +35147,17 @@
             Execute only second step of the algorithm
             </summary>
         </member>
-        <member name="T:Emgu.CV.Legacy.MultiTracker">
+        <member name="T:Emgu.CV.Tracking.MultiTracker">
             <summary>
             This class is used to track multiple objects using the specified tracker algorithm. The MultiTracker is naive implementation of multiple object tracking. It process the tracked objects independently without any optimization accross the tracked objects.
             </summary>
         </member>
-        <member name="M:Emgu.CV.Legacy.MultiTracker.#ctor">
+        <member name="M:Emgu.CV.Tracking.MultiTracker.#ctor">
             <summary>
             Constructor. In the case of trackerType is given, it will be set as the default algorithm for all trackers.
             </summary>
         </member>
-        <member name="M:Emgu.CV.Legacy.MultiTracker.Add(Emgu.CV.Legacy.Tracker,Emgu.CV.IInputArray,System.Drawing.Rectangle)">
+        <member name="M:Emgu.CV.Tracking.MultiTracker.Add(Emgu.CV.Tracking.Tracker,Emgu.CV.IInputArray,System.Drawing.Rectangle)">
             <summary>
             Add a new object to be tracked. The defaultAlgorithm will be used the newly added tracker.
             </summary>
@@ -35103,7 +35166,7 @@
             <param name="boundingBox">A rectangle represents ROI of the tracked object</param>
             <returns>True if successfully added</returns>
         </member>
-        <member name="M:Emgu.CV.Legacy.MultiTracker.Update(Emgu.CV.Mat,Emgu.CV.Util.VectorOfRect)">
+        <member name="M:Emgu.CV.Tracking.MultiTracker.Update(Emgu.CV.Mat,Emgu.CV.Util.VectorOfRect)">
             <summary>
             Update the current tracking status. The result will be saved in the internal storage.
             </summary>
@@ -35111,28 +35174,28 @@
             <param name="boundingBox">the tracking result, represent a list of ROIs of the tracked objects.</param>
             <returns>True id update success</returns>
         </member>
-        <member name="M:Emgu.CV.Legacy.MultiTracker.GetObjects">
+        <member name="M:Emgu.CV.Tracking.MultiTracker.GetObjects">
             <summary>
             Returns the tracked objects, each object corresponds to one tracker algorithm.
             </summary>
             <returns>The tracked objects, each object corresponds to one tracker algorithm.</returns>
         </member>
-        <member name="M:Emgu.CV.Legacy.MultiTracker.DisposeObject">
+        <member name="M:Emgu.CV.Tracking.MultiTracker.DisposeObject">
             <summary>
             Release the unmanaged memory associated with this multi-tracker.
             </summary>
         </member>
-        <member name="T:Emgu.CV.Legacy.Tracker">
+        <member name="T:Emgu.CV.Tracking.Tracker">
             <summary>
             Long-term tracker
             </summary>
         </member>
-        <member name="F:Emgu.CV.Legacy.Tracker._trackerPtr">
+        <member name="F:Emgu.CV.Tracking.Tracker._trackerPtr">
             <summary>
             The native pointer to the tracker
             </summary>
         </member>
-        <member name="M:Emgu.CV.Legacy.Tracker.Init(Emgu.CV.Mat,System.Drawing.Rectangle)">
+        <member name="M:Emgu.CV.Tracking.Tracker.Init(Emgu.CV.Mat,System.Drawing.Rectangle)">
             <summary>
             Initialize the tracker with a know bounding box that surrounding the target.
             </summary>
@@ -35140,7 +35203,7 @@
             <param name="boundingBox">The initial bounding box</param>
             <returns>True if successful.</returns>
         </member>
-        <member name="M:Emgu.CV.Legacy.Tracker.Update(Emgu.CV.Mat,System.Drawing.Rectangle@)">
+        <member name="M:Emgu.CV.Tracking.Tracker.Update(Emgu.CV.Mat,System.Drawing.Rectangle@)">
             <summary>
             Update the tracker, find the new most likely bounding box for the target.
             </summary>
@@ -35148,18 +35211,18 @@
             <param name="boundingBox">The bounding box that represent the new target location, if true was returned, not modified otherwise</param>
             <returns>True means that target was located and false means that tracker cannot locate target in current frame. Note, that latter does not imply that tracker has failed, maybe target is indeed missing from the frame (say, out of sight)</returns>
         </member>
-        <member name="M:Emgu.CV.Legacy.Tracker.DisposeObject">
+        <member name="M:Emgu.CV.Tracking.Tracker.DisposeObject">
             <summary>
             Release the unmanaged memory associated with this tracker
             </summary>
         </member>
-        <member name="T:Emgu.CV.Legacy.TrackerBoosting">
+        <member name="T:Emgu.CV.Tracking.TrackerBoosting">
             <summary>
             This is a real-time object tracking based on a novel on-line version of the AdaBoost algorithm. 
             The classifier uses the surrounding background as negative examples in update step to avoid the drifting problem.
             </summary>
         </member>
-        <member name="M:Emgu.CV.Legacy.TrackerBoosting.#ctor(System.Int32,System.Single,System.Single,System.Int32,System.Int32)">
+        <member name="M:Emgu.CV.Tracking.TrackerBoosting.#ctor(System.Int32,System.Single,System.Single,System.Int32,System.Int32)">
             <summary>
             Create a Boosting Tracker
             </summary>
@@ -35169,78 +35232,17 @@
             <param name="iterationInit">The initial iterations</param>
             <param name="featureSetNumFeatures">Number of features, a good value would be 10*numClassifiers + iterationInit</param>
         </member>
-        <member name="M:Emgu.CV.Legacy.TrackerBoosting.DisposeObject">
+        <member name="M:Emgu.CV.Tracking.TrackerBoosting.DisposeObject">
             <summary>
             Release all the unmanaged memory associated with this Boosting Tracker
             </summary>
         </member>
-        <member name="T:Emgu.CV.Legacy.TrackerMedianFlow">
-            <summary>
-            Median Flow tracker implementation.
-            The tracker is suitable for very smooth and predictable movements when object is visible throughout
-            the whole sequence.It's quite and accurate for this type of problems (in particular, it was shown
-            by authors to outperform MIL). During the implementation period the code at
-            http://www.aonsquared.co.uk/node/5, the courtesy of the author Arthur Amarra, was used for the
-            reference purpose.
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Legacy.TrackerMedianFlow.#ctor(System.Int32,System.Drawing.Size,System.Int32,Emgu.CV.Structure.MCvTermCriteria,System.Drawing.Size,System.Double)">
-            <summary>Create a median flow tracker</summary>
-            <param name="pointsInGrid">Points in grid, use 10 for default.</param>
-            <param name="winSize">Win size, use (3, 3) for default</param>
-            <param name="maxLevel">Max level, use 5 for default.</param>
-            <param name="termCriteria">Termination criteria, use count = 20 and eps = 0.3 for default</param>
-            <param name="winSizeNCC">win size NCC, use (30, 30) for default</param>
-            <param name="maxMedianLengthOfDisplacementDifference">Max median length of displacement difference</param>
-        </member>
-        <member name="M:Emgu.CV.Legacy.TrackerMedianFlow.DisposeObject">
-            <summary>
-            Release the unmanaged resources associated with this tracker
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.Legacy.TrackerMOSSE">
-            <summary>
-            MOSSE Visual Object Tracking using Adaptive Correlation Filters
-            </summary>
-            <remarks>note, that this tracker works with grayscale images, if passed bgr ones, they will get converted internally.</remarks>
-        </member>
-        <member name="M:Emgu.CV.Legacy.TrackerMOSSE.#ctor">
-            <summary>
-            Create a MOSSE tracker
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Legacy.TrackerMOSSE.DisposeObject">
-            <summary>
-            Release the unmanaged resources associated with this tracker
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.Legacy.TrackerTLD">
-            <summary>
-            TLD is a novel tracking framework that explicitly decomposes the long-term tracking task into tracking, learning and detection.
-            </summary>
-            <remarks>The tracker follows the object from frame to frame. The detector localizes all appearances that have been observed so far and corrects the tracker if necessary. The learning estimates detector's errors and updates it to avoid these errors in the future.</remarks>
-        </member>
-        <member name="M:Emgu.CV.Legacy.TrackerTLD.#ctor">
-            <summary>
-            Creates a TLD tracker
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Legacy.TrackerTLD.DisposeObject">
-            <summary>
-            Release the unmanaged resources associated with this tracker
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.TrackingInvoke">
-            <summary>
-            Class that contains entry points for the Contrib module.
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.TrackerCSRT">
+        <member name="T:Emgu.CV.Tracking.TrackerCSRT">
             <summary>
             Discriminative Correlation Filter Tracker with Channel and Spatial Reliability
             </summary>
         </member>
-        <member name="M:Emgu.CV.TrackerCSRT.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single)">
+        <member name="M:Emgu.CV.Tracking.TrackerCSRT.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single)">
             <summary>
             Creates a CSRT tracker
             </summary>
@@ -35271,19 +35273,35 @@
             <param name="scaleLr">Scale Lr</param>
             <param name="scaleStep">Scale step</param>
         </member>
-        <member name="M:Emgu.CV.TrackerCSRT.DisposeObject">
+        <member name="M:Emgu.CV.Tracking.TrackerCSRT.DisposeObject">
             <summary>
             Release the unmanaged resources associated with this tracker
             </summary>
         </member>
-        <member name="T:Emgu.CV.TrackerKCF">
+        <member name="T:Emgu.CV.Tracking.TrackerGOTURN">
+            <summary>
+            GOTURN is kind of trackers based on Convolutional Neural Networks (CNN). While taking all advantages of CNN trackers, GOTURN is much faster due to offline training without online fine-tuning nature. GOTURN tracker addresses the problem of single target tracking: given a bounding box label of an object in the first frame of the video, we track that object through the rest of the video. NOTE: Current method of GOTURN does not handle occlusions; however, it is fairly robust to viewpoint changes, lighting changes, and deformations. Inputs of GOTURN are two RGB patches representing Target and Search patches resized to 227x227. Outputs of GOTURN are predicted bounding box coordinates, relative to Search patch coordinate system, in format X1,Y1,X2,Y2.
+            </summary>
+            <remarks>Original paper is here: http://davheld.github.io/GOTURN/GOTURN.pdf As long as original authors implementation: https://github.com/davheld/GOTURN#train-the-tracker Implementation of training algorithm is placed in separately here due to 3d-party dependencies: https://github.com/Auron-X/GOTURN_Training_Toolkit GOTURN architecture goturn.prototxt and trained model goturn.caffemodel are accessible on opencv_extra GitHub repository.</remarks>
+        </member>
+        <member name="M:Emgu.CV.Tracking.TrackerGOTURN.#ctor">
+            <summary>
+            Create a GOTURN tracker
+            </summary>
+        </member>
+        <member name="M:Emgu.CV.Tracking.TrackerGOTURN.DisposeObject">
+            <summary>
+            Release the unmanaged resources associated with this tracker
+            </summary>
+        </member>
+        <member name="T:Emgu.CV.Tracking.TrackerKCF">
             <summary>
             KCF is a novel tracking framework that utilizes properties of circulant matrix to enhance the processing speed.
             The original paper of KCF is available at http://home.isr.uc.pt/~henriques/circulant/index.html
             as well as the matlab implementation.
             </summary>
         </member>
-        <member name="T:Emgu.CV.TrackerKCF.Mode">
+        <member name="T:Emgu.CV.Tracking.TrackerKCF.Mode">
             <summary>
             Feature type to be used in the tracking grayscale, colornames, compressed color-names
             The modes available now:
@@ -35291,22 +35309,22 @@
             -   "CN" -- Color-names feature
             </summary>
         </member>
-        <member name="F:Emgu.CV.TrackerKCF.Mode.Gray">
+        <member name="F:Emgu.CV.Tracking.TrackerKCF.Mode.Gray">
             <summary>
             Grayscale
             </summary>
         </member>
-        <member name="F:Emgu.CV.TrackerKCF.Mode.Cn">
+        <member name="F:Emgu.CV.Tracking.TrackerKCF.Mode.Cn">
             <summary>
             Color
             </summary>
         </member>
-        <member name="F:Emgu.CV.TrackerKCF.Mode.Custom">
+        <member name="F:Emgu.CV.Tracking.TrackerKCF.Mode.Custom">
             <summary>
             Custom
             </summary>
         </member>
-        <member name="M:Emgu.CV.TrackerKCF.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,Emgu.CV.TrackerKCF.Mode,Emgu.CV.TrackerKCF.Mode)">
+        <member name="M:Emgu.CV.Tracking.TrackerKCF.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32,Emgu.CV.Tracking.TrackerKCF.Mode,Emgu.CV.Tracking.TrackerKCF.Mode)">
             <summary>
             Creates a KCF Tracker
             </summary>
@@ -35325,7 +35343,87 @@
             <param name="descPca">compressed descriptors of TrackerKCF::MODE</param>
             <param name="descNpca">non-compressed descriptors of TrackerKCF::MODE</param>
         </member>
-        <member name="M:Emgu.CV.TrackerKCF.DisposeObject">
+        <member name="M:Emgu.CV.Tracking.TrackerKCF.DisposeObject">
+            <summary>
+            Release the unmanaged resources associated with this tracker
+            </summary>
+        </member>
+        <member name="T:Emgu.CV.Tracking.TrackerMedianFlow">
+            <summary>
+            Median Flow tracker implementation.
+            The tracker is suitable for very smooth and predictable movements when object is visible throughout
+            the whole sequence.It's quite and accurate for this type of problems (in particular, it was shown
+            by authors to outperform MIL). During the implementation period the code at
+            http://www.aonsquared.co.uk/node/5, the courtesy of the author Arthur Amarra, was used for the
+            reference purpose.
+            </summary>
+        </member>
+        <member name="M:Emgu.CV.Tracking.TrackerMedianFlow.#ctor(System.Int32,System.Drawing.Size,System.Int32,Emgu.CV.Structure.MCvTermCriteria,System.Drawing.Size,System.Double)">
+            <summary>Create a median flow tracker</summary>
+            <param name="pointsInGrid">Points in grid, use 10 for default.</param>
+            <param name="winSize">Win size, use (3, 3) for default</param>
+            <param name="maxLevel">Max level, use 5 for default.</param>
+            <param name="termCriteria">Termination criteria, use count = 20 and eps = 0.3 for default</param>
+            <param name="winSizeNCC">win size NCC, use (30, 30) for default</param>
+            <param name="maxMedianLengthOfDisplacementDifference">Max median length of displacement difference</param>
+        </member>
+        <member name="M:Emgu.CV.Tracking.TrackerMedianFlow.DisposeObject">
+            <summary>
+            Release the unmanaged resources associated with this tracker
+            </summary>
+        </member>
+        <member name="T:Emgu.CV.Tracking.TrackerMIL">
+            <summary>
+            The MIL algorithm trains a classifier in an online manner to separate the object from the background.
+            Multiple Instance Learning avoids the drift problem for a robust tracking.
+            Original code can be found here http://vision.ucsd.edu/~bbabenko/project_miltrack.shtml
+            </summary>
+        </member>
+        <member name="M:Emgu.CV.Tracking.TrackerMIL.#ctor(System.Single,System.Int32,System.Single,System.Single,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a MIL Tracker
+            </summary>
+            <param name="samplerInitInRadius">radius for gathering positive instances during init</param>
+            <param name="samplerInitMaxNegNum">negative samples to use during init</param>
+            <param name="samplerSearchWinSize">size of search window</param>
+            <param name="samplerTrackInRadius">radius for gathering positive instances during tracking</param>
+            <param name="samplerTrackMaxPosNum">positive samples to use during tracking</param>
+            <param name="samplerTrackMaxNegNum">negative samples to use during tracking</param>
+            <param name="featureSetNumFeatures">features</param>
+        </member>
+        <member name="M:Emgu.CV.Tracking.TrackerMIL.DisposeObject">
+            <summary>
+            Release all the unmanaged memory associated with this tracker
+            </summary>
+        </member>
+        <member name="T:Emgu.CV.Tracking.TrackerMOSSE">
+            <summary>
+            MOSSE Visual Object Tracking using Adaptive Correlation Filters
+            </summary>
+            <remarks>note, that this tracker works with grayscale images, if passed bgr ones, they will get converted internally.</remarks>
+        </member>
+        <member name="M:Emgu.CV.Tracking.TrackerMOSSE.#ctor">
+            <summary>
+            Create a MOSSE tracker
+            </summary>
+        </member>
+        <member name="M:Emgu.CV.Tracking.TrackerMOSSE.DisposeObject">
+            <summary>
+            Release the unmanaged resources associated with this tracker
+            </summary>
+        </member>
+        <member name="T:Emgu.CV.Tracking.TrackerTLD">
+            <summary>
+            TLD is a novel tracking framework that explicitly decomposes the long-term tracking task into tracking, learning and detection.
+            </summary>
+            <remarks>The tracker follows the object from frame to frame. The detector localizes all appearances that have been observed so far and corrects the tracker if necessary. The learning estimates detector's errors and updates it to avoid these errors in the future.</remarks>
+        </member>
+        <member name="M:Emgu.CV.Tracking.TrackerTLD.#ctor">
+            <summary>
+            Creates a TLD tracker
+            </summary>
+        </member>
+        <member name="M:Emgu.CV.Tracking.TrackerTLD.DisposeObject">
             <summary>
             Release the unmanaged resources associated with this tracker
             </summary>
@@ -36226,241 +36324,6 @@
             <param name="src">The input image</param>
             <param name="ifDraw">if draw the image in the returned Mat. if this parameter is false, then the content of the returned Mat is a matrix of index, describing the region each pixel belongs to. And it's data type is CV_16U. If this parameter is true, then the returned Mat is a segmented picture, and color of each region is the average color of all pixels in that region. And it's data type is the same as the input image</param>
             <returns>Segmentation result</returns>
-        </member>
-        <member name="T:Emgu.CV.LineDescriptor.BinaryDescriptor">
-            <summary>
-            Class implements both functionality for detection of lines and computation of their binary descriptor.
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.BinaryDescriptor.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.BinaryDescriptor.Detect(Emgu.CV.Mat,Emgu.CV.LineDescriptor.VectorOfKeyLine,Emgu.CV.Mat)">
-            <summary>
-            Line detection.
-            </summary>
-            <param name="image">Input image</param>
-            <param name="keylines">Vector that will store extracted lines for one or more images</param>
-            <param name="mask">Mask matrix to detect only KeyLines of interest</param>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.BinaryDescriptor.Compute(Emgu.CV.Mat,Emgu.CV.LineDescriptor.VectorOfKeyLine,Emgu.CV.Mat,System.Boolean)">
-            <summary>
-            Descriptors computation.
-            </summary>
-            <param name="image">Input image</param>
-            <param name="keylines">Vector containing lines for which descriptors must be computed</param>
-            <param name="descriptors">Computed descriptors will be stored here</param>
-            <param name="returnFloatDescr">When true, original non-binary descriptors are returned</param>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.BinaryDescriptor.DisposeObject">
-            <summary>
-            Release unmanaged memory associated with this binary descriptor
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.LineDescriptor.LineDescriptorInvoke">
-            <summary>
-            Entry points for LineDescriptor module
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.LineDescriptor.LSDDetector">
-            <summary>
-            The lines extraction methodology described in the following is mainly based on: R Grompone Von Gioi, Jeremie Jakubowicz, Jean-Michel Morel, and Gregory Randall. Lsd: A fast line segment detector with a false detection control. IEEE Transactions on Pattern Analysis and Machine Intelligence, 32(4):722-732, 2010.
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.LSDDetector.#ctor">
-            <summary>
-            Default constructor
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.LSDDetector.Detect(Emgu.CV.Mat,Emgu.CV.LineDescriptor.VectorOfKeyLine,System.Int32,System.Int32,Emgu.CV.Mat)">
-            <summary>
-            Detect lines inside an image.
-            </summary>
-            <param name="image">Input image</param>
-            <param name="keylines">Vector that will store extracted lines for one or more images</param>
-            <param name="scale">Scale factor used in pyramids generation</param>
-            <param name="numOctaves">Number of octaves inside pyramid</param>
-            <param name="mask">Mask matrix to detect only KeyLines of interest</param>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.LSDDetector.DisposeObject">
-            <summary>
-            Release the unmanaged memory associated with this object.
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.LineDescriptor.MKeyLine">
-            <summary>
-            A class to represent a line.
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.Angle">
-            <summary>
-            Orientation of the line
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.ClassId">
-            <summary>
-            Object ID, that can be used to cluster keylines by the line they represent
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.Octave">
-            <summary>
-            Octave (pyramid layer), from which the keyline has been extracted 
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.Pt">
-            <summary>
-            Coordinates of the middlepoint
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.Response">
-            <summary>
-            The response, by which the strongest keylines have been selected.
-            It's represented by the ratio between line's length and maximum between
-            image's width and height 
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.Size">
-            <summary>
-            Minimum area containing line
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.StartPointX">
-            <summary>
-            Lines's extremes in original image 
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.StartPointY">
-            <summary>
-            Lines's extremes in original image 
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.EndPointX">
-            <summary>
-            Lines's extremes in original image 
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.EndPointY">
-            <summary>
-            Lines's extremes in original image 
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.SPointInOctaveX">
-            <summary>
-            Line's extremes in image it was extracted from
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.SPointInOctaveY">
-            <summary>
-            Line's extremes in image it was extracted from
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.EPointInOctaveX">
-            <summary>
-            Line's extremes in image it was extracted from
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.EPointInOctaveY">
-            <summary>
-            Line's extremes in image it was extracted from
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.LineLength">
-            <summary>
-            The length of line
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.LineDescriptor.MKeyLine.NumOfPixels">
-            <summary>
-            Number of pixels covered by the line
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.LineDescriptor.VectorOfKeyLine">
-            <summary>
-            Wrapped class of the C++ standard vector of KeyLine.
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.VectorOfKeyLine.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            Constructor used to deserialize runtime serialized object
-            </summary>
-            <param name="info">The serialization info</param>
-            <param name="context">The streaming context</param>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.VectorOfKeyLine.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
-            <summary>
-            A function used for runtime serialization of the object
-            </summary>
-            <param name="info">Serialization info</param>
-            <param name="context">Streaming context</param>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.VectorOfKeyLine.#ctor">
-            <summary>
-            Create an empty standard vector of KeyLine
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.VectorOfKeyLine.#ctor(System.Int32)">
-            <summary>
-            Create an standard vector of KeyLine of the specific size
-            </summary>
-            <param name="size">The size of the vector</param>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.VectorOfKeyLine.#ctor(Emgu.CV.LineDescriptor.MKeyLine[])">
-            <summary>
-            Create an standard vector of KeyLine with the initial values
-            </summary>
-            <param name="values">The initial values</param>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.VectorOfKeyLine.Push(Emgu.CV.LineDescriptor.MKeyLine[])">
-            <summary>
-            Push an array of value into the standard vector
-            </summary>
-            <param name="value">The value to be pushed to the vector</param>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.VectorOfKeyLine.Push(Emgu.CV.LineDescriptor.VectorOfKeyLine)">
-            <summary>
-            Push multiple values from the other vector into this vector
-            </summary>
-            <param name="other">The other vector, from which the values will be pushed to the current vector</param>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.VectorOfKeyLine.ToArray">
-            <summary>
-            Convert the standard vector to an array of KeyLine
-            </summary>
-            <returns>An array of KeyLine</returns>
-        </member>
-        <member name="P:Emgu.CV.LineDescriptor.VectorOfKeyLine.Size">
-            <summary>
-            Get the size of the vector
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.VectorOfKeyLine.Clear">
-            <summary>
-            Clear the vector
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.LineDescriptor.VectorOfKeyLine.StartAddress">
-            <summary>
-            The pointer to the first element on the vector. In case of an empty vector, IntPtr.Zero will be returned.
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.LineDescriptor.VectorOfKeyLine.Item(System.Int32)">
-            <summary>
-            Get the item in the specific index
-            </summary>
-            <param name="index">The index</param>
-            <returns>The item in the specific index</returns>
-        </member>
-        <member name="M:Emgu.CV.LineDescriptor.VectorOfKeyLine.DisposeObject">
-            <summary>
-            Release the standard vector
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.LineDescriptor.VectorOfKeyLine.SizeOfItemInBytes">
-            <summary>
-            The size of the item in this Vector, counted as size in bytes.
-            </summary>
         </member>
         <member name="T:Emgu.CV.XObjdetect.WBDetector">
             <summary>
@@ -37529,396 +37392,6 @@
             </summary>
             <param name="tracker">The tracker</param>
         </member>
-        <member name="T:Emgu.CV.Mcc.CChecker">
-            <summary>
-            This class contains the information about the detected checkers,i.e, their type, the corners of the chart, the color profile, the cost, centers chart, etc.
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.Mcc.CChecker.TypeChart">
-            <summary>
-            The type of checker
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.Mcc.CChecker.TypeChart.MCC24">
-            <summary>
-            Standard Macbeth Chart with 24 squares
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.Mcc.CChecker.TypeChart.SG140">
-            <summary>
-            DigitalSG with 140 squares
-            </summary>
-        </member>
-        <member name="F:Emgu.CV.Mcc.CChecker.TypeChart.Vinyl18">
-            <summary>
-            DKK color chart with 12 squares and 6 rectangle
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Mcc.CChecker.#ctor">
-            <summary>
-            Create a new CChecker
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.CChecker.Box">
-            <summary>
-            Get or Set the points that forms a box for the CChecker.
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.CChecker.Center">
-            <summary>
-            Get or Set the center of the CChecker
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Mcc.CChecker.DisposeObject">
-            <summary>
-            Release the unmanaged memory associated with this object
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.CChecker.Target">
-            <summary>
-            Target
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.CChecker.Cost">
-            <summary>
-            Cost
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.Mcc.MccInvoke">
-            <summary>
-            Class that contains entry points for the Mcc module.
-            </summary>
-            <summary>
-            Class that contains entry points for the Mcc module.
-            </summary>
-            <summary>
-            Class that contains entry points for the Mcc module.
-            </summary>
-            <summary>
-            Class that contains entry points for the Mcc module.
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.Mcc.CCheckerDetector">
-            <summary>
-            A class to find the positions of the ColorCharts in the image.
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Mcc.CCheckerDetector.#ctor">
-            <summary>
-            Create a new CCheckerDetector.
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.CCheckerDetector.AlgorithmPtr">
-            <summary>
-            Pointer to the native algorithm object
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.CCheckerDetector.BestColorChecker">
-            <summary>
-            Get the best color checker. By the best it means the one
-            detected with the highest confidence.
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Mcc.CCheckerDetector.DisposeObject">
-            <summary>
-            Release the unmanaged memory associated with this object
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Mcc.CCheckerDetector.Process(Emgu.CV.IInputArray,Emgu.CV.Mcc.CChecker.TypeChart,System.Int32,System.Boolean,Emgu.CV.Mcc.DetectorParameters)">
-            <summary>
-            Find the ColorCharts in the given image. The found charts are not returned but instead stored in the
-            detector, these can be accessed later on using BestColorChecker
-            and GetListColorChecker()
-            </summary>
-            <param name="image">Image in color space BGR</param>
-            <param name="chartType">Type of the chart to detect</param>
-            <param name="nc">Number of charts in the image, if you don't know the exact then keeping this number high helps.</param>
-            <param name="useNet">If it is true, the network provided using the setNet() is used for preliminary search for regions where chart
-            could be present, inside the regionsOfInterest provided.</param>
-            <param name="p">Parameters of the detection system</param>
-            <returns>true if at least one chart is detected, otherwise false</returns>
-        </member>
-        <member name="T:Emgu.CV.Mcc.CCheckerDraw">
-            <summary>
-            This class contains the functions for drawing a detected chart. 
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Mcc.CCheckerDraw.#ctor(Emgu.CV.Mcc.CChecker,Emgu.CV.Structure.MCvScalar,System.Int32)">
-            <summary>
-            Create a new CCheckerDraw object.
-            </summary>
-            <param name="cchecker">The checker which will be drawn by this object.</param>
-            <param name="color">The color by with which the squares of the checker will be drawn</param>
-            <param name="thickness">The thickness with which the squares will be drawn</param>
-        </member>
-        <member name="M:Emgu.CV.Mcc.CCheckerDraw.Draw(Emgu.CV.IInputOutputArray)">
-            <summary>
-            Draws the checker to the given image.
-            </summary>
-            <param name="img">mage in color space BGR</param>
-        </member>
-        <member name="M:Emgu.CV.Mcc.CCheckerDraw.DisposeObject">
-            <summary>
-            Release the unmanaged memory associated with this object
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.Mcc.DetectorParameters">
-            <summary>
-            Parameters for the detectMarker process
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Mcc.DetectorParameters.#ctor">
-            <summary>
-            Parameters for the detectMarker process
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Mcc.DetectorParameters.DisposeObject">
-            <summary>
-            Release the unmanaged memory associated with this object
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.AdaptiveThreshWinSizeMin">
-            <summary>
-            AdaptiveThreshold minimum window size
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.AdaptiveThreshWinSizeMax">
-            <summary>
-            AdaptiveThreshold maximum window size
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.AdaptiveThreshWinSizeStep">
-            <summary>
-            AdaptiveThreshold window size step
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.AdaptiveThreshConstant">
-            <summary>
-            AdaptiveThreshold constant
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.MinContoursAreaRate">
-            <summary>
-            Minimum Contours Area Rate
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.MinContoursArea">
-            <summary>
-            Minimum Contours Area
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.ConfidenceThreshold">
-            <summary>
-            Confidence Threshold
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.MinContourSolidity">
-            <summary>
-            Minimum Contour Solidity
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.FindCandidatesApproxPolyDPEpsMultiplier">
-            <summary>
-            Find Candidates Approx Poly DP Eps Multiplier
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.BorderWidth">
-            <summary>
-            Border Width
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.B0factor">
-            <summary>
-            B0factor
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.MaxError">
-            <summary>
-            Max Error
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.MinContourPointsAllowed">
-            <summary>
-            Minimum Contour Points Allowed
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.MinContourLengthAllowed">
-            <summary>
-            Minimum Contour Length Allowed
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.MinInterContourDistance">
-            <summary>
-            Minimum InterContour Distance
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.MinInterCheckerDistance">
-            <summary>
-            Minimum InterChecker Distance
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.MinImageSize">
-            <summary>
-            Minimum Image Size
-            </summary>
-        </member>
-        <member name="P:Emgu.CV.Mcc.DetectorParameters.MinGroupSize">
-            <summary>
-            Minimum Group Size
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.Hdf.HDF5">
-            <summary>
-            Hierarchical Data Format version 5 interface.
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.#ctor(System.String)">
-            <summary>
-            Open or create hdf5 file.
-            </summary>
-            <param name="fileName">Specify the HDF5 filename.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.Close">
-            <summary>
-            Close and release hdf5 object.
-            </summary>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.GrCreate(System.String)">
-            <summary>
-            Create a hdf5 group with default properties. The group is closed automatically after creation.
-            </summary>
-            <param name="grLabel">Specify the hdf5 group label.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.HlExist(System.String)">
-            <summary>
-            Check if label exists or not.
-            </summary>
-            <param name="label">Specify the hdf5 dataset label.</param>
-            <returns>Returns true if dataset exists, and false otherwise.</returns>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.DsRead(Emgu.CV.IOutputArray,System.String)">
-            <summary>
-            Read specific dataset from hdf5 file into Mat object.
-            </summary>
-            <param name="array">Mat container where data reads will be returned.</param>
-            <param name="dsLabel">Specify the source hdf5 dataset label.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.DsWrite(Emgu.CV.IInputArray,System.String)">
-            <summary>
-            Write or overwrite a Mat object into specified dataset of hdf5 file.
-            </summary>
-            <param name="array">Specify Mat data array to be written.</param>
-            <param name="dsLabel">Specify the target hdf5 dataset label.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.DsCreate(System.Int32,System.Int32,Emgu.CV.CvEnum.DepthType,System.Int32,System.String,System.Int32,Emgu.CV.Util.VectorOfInt)">
-            <summary>
-            Create and allocate storage for two dimensional single or multi channel dataset.
-            </summary>
-            <param name="rows">Declare amount of rows</param>
-            <param name="cols">Declare amount of columns</param>
-            <param name="depthType">The pixel depth type</param>
-            <param name="channels">The number of channels</param>
-            <param name="dsLabel">Specify the hdf5 dataset label. Existing dataset label will cause an error.</param>
-            <param name="compressLevel">Specify the compression level 0-9 to be used, -1 is the default value and means no compression. The value 0 also means no compression. A value 9 indicating the best compression ration. Note that a higher compression level indicates a higher computational cost. It relies on GNU gzip for compression.</param>
-            <param name="dimsChunks">Each array member specifies the chunking size to be used for block I/O, by default null means none at all.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.AtExists(System.String)">
-            <summary>
-            Check whether a given attribute exits or not in the root group.
-            </summary>
-            <param name="atLabel">The attribute name to be checked.</param>
-            <returns>True if the attribute exists, False otherwise.</returns>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.AtDelete(System.String)">
-            <summary>
-            Delete an attribute from the root group.
-            </summary>
-            <param name="atLabel">The attribute to be deleted.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.AtReadInt(System.String)">
-            <summary>
-            Read an attribute from the root group.
-            </summary>
-            <param name="atLabel">Attribute name</param>
-            <returns>The int value</returns>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.AtWrite(System.Int32,System.String)">
-            <summary>
-            Write an attribute inside the root group.
-            </summary>
-            <param name="value">Attribute value.</param>
-            <param name="atLabel">Attribute name.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.AtReadDouble(System.String)">
-            <summary>
-            Read an attribute from the root group.
-            </summary>
-            <param name="atLabel">Attribute name</param>
-            <returns>The double value</returns>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.AtWrite(System.Double,System.String)">
-            <summary>
-            Write an attribute inside the root group.
-            </summary>
-            <param name="value">Attribute value.</param>
-            <param name="atLabel">Attribute name.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.AtReadString(System.String)">
-            <summary>
-            Read an attribute from the root group.
-            </summary>
-            <param name="atLabel">Attribute name</param>
-            <returns>The String value</returns>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.AtWrite(System.String,System.String)">
-            <summary>
-            Write an attribute inside the root group.
-            </summary>
-            <param name="value">Attribute value.</param>
-            <param name="atLabel">Attribute name.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.AtReadArray(Emgu.CV.IOutputArray,System.String)">
-            <summary>
-            Read an attribute from the root group.
-            </summary>
-            <param name="atLabel">Attribute name</param>
-            <param name="array">The output value</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.AtWrite(Emgu.CV.IInputArray,System.String)">
-            <summary>
-            Write an attribute inside the root group.
-            </summary>
-            <param name="value">Attribute value.</param>
-            <param name="atLabel">Attribute name.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.KpRead(Emgu.CV.Util.VectorOfKeyPoint,System.String,System.Int32,System.Int32)">
-            <summary>
-            Read specific keypoint dataset from hdf5 file into VectorOfKeyPoint object.
-            </summary>
-            <param name="keypoints">Container where data reads will be returned.</param>
-            <param name="kpLabel">Specify the source hdf5 dataset label.</param>
-            <param name="offset">Specify the offset location over dataset from where read starts.</param>
-            <param name="counts">Specify the amount of keypoints from dataset to read.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.KpWrite(Emgu.CV.Util.VectorOfKeyPoint,System.String,System.Int32,System.Int32)">
-            <summary>
-            Write or overwrite list of KeyPoint into specified dataset of hdf5 file.
-            </summary>
-            <param name="keypoints">Specify keypoints data list to be written.</param>
-            <param name="atLabel">Specify the target hdf5 dataset label.</param>
-            <param name="offset">Specify the offset location on dataset from where keypoints will be (over)written into dataset.</param>
-            <param name="counts">Specify the amount of keypoints that will be written into dataset.</param>
-        </member>
-        <member name="M:Emgu.CV.Hdf.HDF5.DisposeObject">
-            <summary>
-            Release all the unmanaged memory associate with this object
-            </summary>
-        </member>
-        <member name="T:Emgu.CV.Hdf.HdfInvoke">
-            <summary>
-            Entry points to the Open CV HDF module
-            </summary>
-        </member>
         <member name="T:Emgu.Util.DisposableObject">
             <summary>
             An abstract class that wrap around a disposable object
@@ -38142,7 +37615,7 @@
             .Net runtime
             </summary>
         </member>
-        <member name="F:Emgu.Util.Platform.Clr.DotNetNative">
+        <member name="F:Emgu.Util.Platform.Clr.NetFxCore">
             <summary>
             Windows Store app runtime
             </summary>
@@ -38295,14 +37768,14 @@
             <param name="dllname">The name of the dll</param>
             <returns>The handle to the library</returns>
         </member>
-        <member name="M:Emgu.Util.Toolbox.SetDllDirectory(System.String)">
+        <member name="M:Emgu.Util.Toolbox.FreeLibrary(System.IntPtr)">
             <summary>
-            Set the directory to the search path used to locate DLLs for the application
+            Decrements the reference count of the loaded dynamic-link library (DLL). When the reference count reaches zero, the module is unmapped from the address space of the calling process and the handle is no longer valid
             </summary>
-            <param name="path">The directory to be searched for DLLs</param>
-            <returns>True if success</returns>
+            <param name="handle">The handle to the library</param>
+            <returns>If the function succeeds, the return value is true. If the function fails, the return value is false.</returns>
         </member>
-        <member name="M:Emgu.Util.Toolbox.AddDllDirectory(System.String)">
+        <member name="M:Emgu.Util.Toolbox.SetDllDirectory(System.String)">
             <summary>
             Adds a directory to the search path used to locate DLLs for the application
             </summary>

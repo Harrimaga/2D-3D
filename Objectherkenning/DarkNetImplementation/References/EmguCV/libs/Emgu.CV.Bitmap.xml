@@ -57,13 +57,6 @@
             <param name="gpuMat">The gpu mat to be converted to Bitmap</param>
             <returns>A bitmap representation of the image.</returns>
         </member>
-        <member name="M:Emgu.CV.BitmapExtension.ToMat(System.Drawing.Bitmap)">
-            <summary>
-            Create a Mat from Bitmap
-            </summary>
-            <param name="bitmap">The Bitmap to be converted to Mat</param>
-            <returns>The Mat converted from Bitmap</returns>
-        </member>
         <member name="M:Emgu.CV.BitmapExtension.ToImage``2(System.Drawing.Bitmap)">
             <summary>
             Create an Image &lt; TColor, TDepth &gt; from Bitmap

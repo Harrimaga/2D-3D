@@ -32,11 +32,19 @@ namespace DarkNetImplementation
             VideoCapture cap = new VideoCapture(video);
 
             Console.WriteLine("[INFO] Loading Model...");
-            //GPU
-            DarknetYOLO model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Cuda, PreferredTarget.Cuda);
 
-            //CPU
-            //DarknetYOLO model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Default, PreferredTarget.Cpu);
+            DarknetYOLO model;
+
+            //GPU
+            if (Emgu.CV.Cuda.CudaInvoke.HasCuda)
+            {
+                Console.WriteLine("GPUUUUU");
+                model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Cuda, PreferredTarget.Cuda);
+            }
+            else
+            {
+                model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Default, PreferredTarget.Cpu);
+            }
             model.NMSThreshold = 0.4f;
             model.ConfidenceThreshold = 0.5f;
 

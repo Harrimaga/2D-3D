@@ -15,7 +15,7 @@ namespace From2Dto3D.View
 	{
 		private readonly MainModel mainModel;
 
-		internal virtual event EventHandler<EventArgs>? ViewChanged;
+		//internal virtual event EventHandler<EventArgs>? ViewChanged;
 		public Button button = new Button();
 		public enum ButtonName { Start, End }
 		protected Viewer(MainModel mainModel)
@@ -46,7 +46,7 @@ namespace From2Dto3D.View
 
 		public class Button
 		{
-			public EventHandler<ButtonArgs>? buttonEvent;
+			internal event EventHandler<ButtonArgs>? buttonEvent;
 			public void OnClick(ButtonName name, string path)
 			{
 				ButtonArgs buttonArgs = new ButtonArgs();

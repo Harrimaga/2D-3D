@@ -9,16 +9,16 @@ namespace From2Dto3D.View
 		{
 			Console.WriteLine("Enter filepath to simulate button press");
 #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-			string key = Console.ReadLine();
+			string[] key = Console.ReadLine().Split(':',2);
 #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 
-			if(key.StartsWith("start: "))
+			if(key[0] == "start")
 			{
-				OnButtonEvent(ButtonName.Start, key);
+				OnButtonEvent(ButtonName.Start, key[1]);
 			}
-			else if(key.StartsWith("end: "))
+			else if(key[1] == "end")
 			{
-				OnButtonEvent(ButtonName.End, key);
+				OnButtonEvent(ButtonName.End, key[1]);
 			}
 			else
 			{

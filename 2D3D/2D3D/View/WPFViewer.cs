@@ -1,4 +1,5 @@
 ﻿using From2Dto3D.Model;
+using From2Dto3D;
 namespace From2Dto3D.View
 {
     class WPFViewer : Viewer
@@ -8,6 +9,6 @@ namespace From2Dto3D.View
 			
 		}
 
-		internal override event EventHandler<EventArgs>? ViewChanged;
+		//internal override event EventHandler<EventArgs>? ViewChanged;
 	}
 }

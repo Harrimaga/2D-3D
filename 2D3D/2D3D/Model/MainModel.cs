@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace From2Dto3D.Model
 {
-	internal class MainModel
+	public class MainModel
 	{
+		public string MeshPath { get; set; }
 		IDetectedObjectCollection DetectedObjects;
 		public MainModel()
 		{

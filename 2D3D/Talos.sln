@@ -10,6 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{0EFED8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "From2DTo3D", "2D3D\From2DTo3D.csproj", "{0A120AC3-8B6C-4537-BF69-CA61A3A583EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsView", "FormsView\FormsView.csproj", "{453AA6C4-F7FC-484B-A299-B2C33928CBC0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0A120AC3-8B6C-4537-BF69-CA61A3A583EA} = {0A120AC3-8B6C-4537-BF69-CA61A3A583EA}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +25,10 @@ Global
 		{0A120AC3-8B6C-4537-BF69-CA61A3A583EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A120AC3-8B6C-4537-BF69-CA61A3A583EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A120AC3-8B6C-4537-BF69-CA61A3A583EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{453AA6C4-F7FC-484B-A299-B2C33928CBC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453AA6C4-F7FC-484B-A299-B2C33928CBC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453AA6C4-F7FC-484B-A299-B2C33928CBC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453AA6C4-F7FC-484B-A299-B2C33928CBC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

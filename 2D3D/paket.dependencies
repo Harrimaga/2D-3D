@@ -1,6 +1,5 @@
 source https://api.nuget.org/v3/index.json
-
 storage: none
-framework: net5.0, netstandard2.0, netstandard2.1
-nuget Microsoft.EntityFrameworkCore.Relational 6.0.10
-git https://github.com/emgucv/emgucv/releases/download/4.5.5/Emgu.CV.runtime.windows.cuda.4.5.5.4823.nupkg
+framework: net6.0, netstandard2.0, netstandard2.1
+http https://github.com/emgucv/emgucv/releases/download/4.5.5/Emgu.CV.runtime.windows.cuda.4.5.5.4823.nupkg emgucv_cuda/emgucv_cuda.zip
+http https://github.com/emgucv/emgucv/releases/download/4.5.5/Emgu.runtime.windows.cuda.dnn.cnn.infer.8.2.0.nupkg emgu_cuda/emgu_cuda.zip

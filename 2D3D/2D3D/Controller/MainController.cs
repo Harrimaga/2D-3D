@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace From2Dto3D.Controller
 {
@@ -16,6 +17,12 @@ namespace From2Dto3D.Controller
         {
             this.viewer = viewer;
 			this.model = model;
+			this.viewer.SourcePath += PathReceiver;
         }
+		private void PathReceiver(object? obj, PathArg pathArg)
+		{
+			model.MeshPath  = Path.GetFullPath(pathArg.Path, Path.GetTempPath());
+			Debug.WriteLine(model.MeshPath);
+		}
     }
 }

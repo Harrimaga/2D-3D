@@ -1,34 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>2Dto3D</RootNamespace>
+    <RootNamespace>From2Dto3D</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>From2Dto3D.Program</StartupObject>
+    <!--<StartupObject>From2Dto3D.Program</StartupObject>-->
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <!--<GenerateDocumentationFile>True</GenerateDocumentationFile>-->
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    <!--<EnableNETAnalyzers>True</EnableNETAnalyzers>-->
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <AssemblyName>From2Dto3D</AssemblyName>
+    <!--<AnalysisLevel>latest-recommended</AnalysisLevel>-->
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <Optimize>True</Optimize>
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <Optimize>False</Optimize>
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="Model\DetectedObject\**" />
-    <EmbeddedResource Remove="Model\DetectedObject\**" />
-    <None Remove="Model\DetectedObject\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Test\" />
-  </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

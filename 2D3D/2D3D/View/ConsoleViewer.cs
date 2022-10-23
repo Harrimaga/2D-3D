@@ -3,7 +3,7 @@
 namespace From2Dto3D.View
 {
 	//TODO Implement ConsoleViewer
-	internal class ConsoleViewer : Viewer
+	public class ConsoleViewer : Viewer
 	{
 		public ConsoleViewer(MainModel mainModel) : base(mainModel)
 		{

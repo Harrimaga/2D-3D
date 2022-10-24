@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DarkNetImplementation", "Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Build", "build\Build.csproj", "{52FF1715-73AC-401E-B884-02E79C17AA46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmguDetector", "EmguDetector\EmguDetector.csproj", "{EEC7F925-ACD9-4D6E-AB43-5DEF089DC637}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,14 @@ Global
 		{52FF1715-73AC-401E-B884-02E79C17AA46}.Release|Any CPU.Build.0 = Release|Any CPU
 		{52FF1715-73AC-401E-B884-02E79C17AA46}.Release|x64.ActiveCfg = Release|Any CPU
 		{52FF1715-73AC-401E-B884-02E79C17AA46}.Release|x64.Build.0 = Release|Any CPU
+		{EEC7F925-ACD9-4D6E-AB43-5DEF089DC637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEC7F925-ACD9-4D6E-AB43-5DEF089DC637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEC7F925-ACD9-4D6E-AB43-5DEF089DC637}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EEC7F925-ACD9-4D6E-AB43-5DEF089DC637}.Debug|x64.Build.0 = Debug|Any CPU
+		{EEC7F925-ACD9-4D6E-AB43-5DEF089DC637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEC7F925-ACD9-4D6E-AB43-5DEF089DC637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEC7F925-ACD9-4D6E-AB43-5DEF089DC637}.Release|x64.ActiveCfg = Release|Any CPU
+		{EEC7F925-ACD9-4D6E-AB43-5DEF089DC637}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

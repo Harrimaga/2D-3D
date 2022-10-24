@@ -10,6 +10,7 @@ using System.Drawing;
 using Emgu.CV.Structure;
 using System.IO;
 using DarkNetImplementation.Models;
+using System.Diagnostics;
 
 namespace DarkNetImplementation
 {
@@ -44,6 +45,7 @@ namespace DarkNetImplementation
         {
             Enum.TryParse(backend.ToString(), out Emgu.CV.Dnn.Backend b);
             Enum.TryParse(target.ToString(), out Emgu.CV.Dnn.Target t);
+            Debug.WriteLine(DnnInvoke.AvailableBackends);
             Network = DnnInvoke.ReadNetFromDarknet(configPath, weightsPath);
             Network.SetPreferableBackend(b);
             Network.SetPreferableTarget(t);

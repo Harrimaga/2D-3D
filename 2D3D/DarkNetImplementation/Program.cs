@@ -4,6 +4,7 @@ using Emgu.CV.Structure;
 using System.Drawing;
 using System.Diagnostics;
 using DarkNetImplementation.Models;
+using Emgu.CV.Dnn;
 
 namespace DarkNetImplementation
 {
@@ -30,7 +31,8 @@ namespace DarkNetImplementation
             Console.WriteLine("[INFO] Loading Model...");
 
             DarknetYOLO model;
-
+            foreach(var a in DnnInvoke.AvailableBackends) 
+                Console.WriteLine($"Target: {a.Target}  |  Backend: {a.Backend}");
             //GPU
             if (Emgu.CV.Cuda.CudaInvoke.HasCuda)
             {

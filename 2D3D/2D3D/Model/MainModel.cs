@@ -13,6 +13,7 @@ namespace From2Dto3D.Model
 		IDetectedObjectCollection DetectedObjects;
 		public MainModel()
 		{
+			MeshPath = "";
 			DetectedObjects = new DetectedObjectList();
 		}
 	}

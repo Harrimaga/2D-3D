@@ -10,10 +10,11 @@ namespace DarkNetImplementation
     {
         static void Main(string[] args)
         {
-            string labels = @"..\..\..\NetworkModels\coco.names";
-            string weights = @"..\..\..\NetworkModels\yolov4-tiny.weights";
-            string cfg = @"..\..\..\NetworkModels\yolov4-tiny.cfg";
-            string video = @"..\..\..\Resources\test.mp4";
+            string labels    = Path.GetFullPath(@"..\..\..\..\NetworkModels\coco.names");
+            string weights   = Path.GetFullPath(@"..\..\..\..\NetworkModels\yolov4-tiny.weights");
+            string cfg       = Path.GetFullPath(@"..\..\..\..\NetworkModels\yolov4-tiny.cfg");
+            string video     = Path.GetFullPath(@"..\..\..\Resources\test.mp4");
+    
             int fps = 1000;
 
             int resizeImageWidth = 200;
@@ -30,7 +31,7 @@ namespace DarkNetImplementation
             DarknetYOLO model;
 
             //GPU
-            if (Emgu.CV.Cuda.CudaInvoke.HasCuda)
+            if (false && Emgu.CV.Cuda.CudaInvoke.HasCuda)
             {
                 Console.WriteLine("Running program with GPU");
                 model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Cuda, PreferredTarget.Cuda);
@@ -47,16 +48,13 @@ namespace DarkNetImplementation
             while (true)
             {
                 Mat frame = new Mat();
-                try
-                {
-                    cap.Read(frame);
-                    CvInvoke.Resize(frame, frame, new Size(1280, 768));
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("VideoEnded");
-                    frame = null;
-                }
+
+                cap.Read(frame);
+                CvInvoke.Resize(frame, frame, new Size(1280, 768));
+
+                    //Console.WriteLine("VideoEnded");
+                    //frame = null;
+                
                 if (frame == null)
                     break;
                 Stopwatch watch = new Stopwatch();

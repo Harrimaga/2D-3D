@@ -1,11 +1,6 @@
 framework: net6.0, netstandard2.0, netstandard2.1
-
-group FromGit
-	http https://github.com/emgucv/emgucv/releases/download/4.5.5/Emgu.CV.runtime.windows.cuda.4.5.5.4823.nupkg nugets/Emgu.CV.runtime.windows.cuda.4.5.5.4823.nupkg
-	http https://github.com/emgucv/emgucv/releases/download/4.5.5/Emgu.runtime.windows.cuda.dnn.cnn.infer.8.2.0.nupkg nugets/Emgu.runtime.windows.cuda.dnn.cnn.infer.8.2.0.nupkg
-	http https://github.com/emgucv/emgucv/releases/download/4.5.5/libemgucv-windesktop-4.5.5.4823.zip nugets/libemgucv-windesktop-4.5.5.4823.zip 
-
-group FromStorage
-	source paket-files\fromgit\github.com\nugets
-	nuget Emgu.runtime.windows.cuda.dnn.cnn.infer
-	nuget Emgu.CV.runtime.windows.cuda
+source https://www.nuget.org/api/v2
+nuget Emgu.CV < 4.4.1
+nuget Emgu.CV.Bitmap
+nuget Emgu.CV.runtime.windows
+nuget Emgu.CV.runtime.windows.cuda

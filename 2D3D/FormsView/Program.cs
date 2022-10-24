@@ -13,10 +13,14 @@ namespace FormsView
         [STAThread]
         static void Main()
         {
-            Core program     = new("Forms");
-            FormsViewer view = (FormsViewer)program.Viewer;
+
+            //FormsViewer view = (FormsViewer)program.Viewer;
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1(view));
+            Form1 f = new();
+            Core program = new("", f);
+            Console.WriteLine("Hello");
+            Application.Run(f);
+
         }
     }
 }

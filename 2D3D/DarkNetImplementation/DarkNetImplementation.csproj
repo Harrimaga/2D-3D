@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="cvextern">
+      <HintPath>..\paket-files\localhost\emgucv_cuda\cvextern.dll</HintPath>
+      <Private>True</Private>
+      <Paket>True</Paket>
+    </Reference>
+    <Reference Include="opencv_img_hash455">
+      <HintPath>..\paket-files\localhost\emgucv_cuda\opencv_img_hash455.dll</HintPath>
+      <Private>True</Private>
+      <Paket>True</Paket>
+    </Reference>
+    <Reference Include="opencv_videoio_ffmpeg455_64">
+      <HintPath>..\paket-files\localhost\emgucv_cuda\opencv_videoio_ffmpeg455_64.dll</HintPath>
+      <Private>True</Private>
+      <Paket>True</Paket>
+    </Reference>
+    <Reference Include="opencv_world455">
+      <HintPath>..\paket-files\localhost\emgucv_cuda\opencv_world455.dll</HintPath>
+      <Private>True</Private>
+      <Paket>True</Paket>
+    </Reference>
+    <Content Include="..\paket-files\github.com\emgu_cuda\emgu_runtime_cuda.nupkg">
+      <Paket>True</Paket>
+      <Link>paket-files/emgu_runtime_cuda.nupkg</Link>
+    </Content>
+    <Content Include="..\paket-files\github.com\emgu_cuda\emgu_cuda.zip">
+      <Paket>True</Paket>
+      <Link>paket-files/emgu_cuda.zip</Link>
+    </Content>
+    <Content Include="..\paket-files\github.com\emgucv_cuda\emgucv_cuda.zip">
+      <Paket>True</Paket>
+      <Link>paket-files/emgucv_cuda.zip</Link>
+    </Content>
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

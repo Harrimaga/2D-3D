@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PixelToPosition : MonoBehaviour
 {
-    public Vector3 ShootRay(int x, int y)
+    public Vector3? ShootRay(int x, int y)
     {
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(x, y, 0));
 
@@ -13,14 +13,14 @@ public class PixelToPosition : MonoBehaviour
         {
             Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.yellow);
             Debug.Log(string.Format("Did hit {0} at {1} ", hit.distance, hit.point));
+            return hit.point;
         }
         else
         {
             Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red);
             Debug.Log("Did not Hit");
-        }
-
-        return hit.point;
+            return null;
+        }       
     }
 
     // Start is called before the first frame update

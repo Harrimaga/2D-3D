@@ -20,8 +20,10 @@ namespace SimpleGUI
             pD.weights      = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov4-tiny.weights";
             pD.cfg          = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov4-tiny.cfg";
 
-            pD.weights = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny.weights";
-            pD.cfg = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny_darknet.cfg";
+            
+
+            //pD.weights = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny.weights";
+            //pD.cfg = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny_darknet.cfg";
 
             //pD.weights = @"C:\Users\Wai Kei Law\Documents\GitHub\2D-3D\Objectherkenning\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny_darknet.cfg";
             //pD.cfg = @"C:\Users\Wai Kei Law\Documents\GitHub\2D-3D\Objectherkenning\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny.weights";
@@ -38,6 +40,10 @@ namespace SimpleGUI
 
             if (textBox1.Text != "")
                 pD.videoStream = textBox1.Text;
+
+
+
+
 
             pD.showConsoleOutput = consoleOutputCheckbox.Checked;
             pD.showImageOutput = imageOutputCheckbox.Checked;

@@ -4,12 +4,20 @@ using System.Drawing;
 using System.Diagnostics;
 using DarkNetImplementation.Models;
 
+using Emgu.CV.Dnn;
+using Emgu.CV;
+using Emgu.CV.Util;
+
 namespace DarkNetImplementation
 {
     class Program
     {
         static void Main(string[] args)
         {
+            Emgu.CV.Cuda.CudaDeviceInfo cv = new();
+            Console.WriteLine(cv.Name);
+            Console.WriteLine(cv.CudaComputeCapability);
+            Console.WriteLine(cv.IsCompatible);
             PersonDetection p = new();
             //p.videoStream = "rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mp4";
             //p.videoStream = "http://192.168.0.4:4747/video";

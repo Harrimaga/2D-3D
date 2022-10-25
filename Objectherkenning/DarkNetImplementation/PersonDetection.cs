@@ -38,7 +38,7 @@ namespace DarkNetImplementation
             }
 
             //Check if it is possible to run the recognition with Cuda enabled
-            if (false && Emgu.CV.Cuda.CudaInvoke.HasCuda)
+            if (Emgu.CV.Cuda.CudaInvoke.HasCuda)
             {
                 if (showDebug)
                     Console.WriteLine("[DEBUG] Running program with GPU");

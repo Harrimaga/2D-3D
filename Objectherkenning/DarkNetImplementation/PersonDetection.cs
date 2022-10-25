@@ -25,17 +25,20 @@ namespace DarkNetImplementation
         public bool showDebug = false;
         public float NMSThreshold = 0.4f;
         public float ConfidenceThreshold = 0.5f;
-        private DarknetYOLO model;
+        private DarknetYOLO ?model;
 
         public void Run()
         {
             VideoCapture cap = new VideoCapture(videoStream);
 
-            if(showDebug)
+            if (showDebug)
+            {
                 Console.WriteLine("[DEBUG] Loading Model...");
+                Console.WriteLine("[DEBUG] using " + resizeImageHeight.ToString() + "," + resizeImageWidth + " as resolution");
+            }
 
             //Check if it is possible to run the recognition with Cuda enabled
-            if (Emgu.CV.Cuda.CudaInvoke.HasCuda)
+            if (false && Emgu.CV.Cuda.CudaInvoke.HasCuda)
             {
                 if (showDebug)
                     Console.WriteLine("[DEBUG] Running program with GPU");

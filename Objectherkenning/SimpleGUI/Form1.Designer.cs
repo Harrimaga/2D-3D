@@ -34,6 +34,8 @@
             this.imageOutputCheckbox = new System.Windows.Forms.CheckBox();
             this.consoleOutputCheckbox = new System.Windows.Forms.CheckBox();
             this.debugCheckbox = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.resolutionInput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +67,9 @@
             // imageOutputCheckbox
             // 
             this.imageOutputCheckbox.AutoSize = true;
-            this.imageOutputCheckbox.Location = new System.Drawing.Point(135, 83);
+            this.imageOutputCheckbox.Checked = true;
+            this.imageOutputCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.imageOutputCheckbox.Location = new System.Drawing.Point(30, 90);
             this.imageOutputCheckbox.Name = "imageOutputCheckbox";
             this.imageOutputCheckbox.Size = new System.Drawing.Size(163, 24);
             this.imageOutputCheckbox.TabIndex = 3;
@@ -75,7 +79,9 @@
             // consoleOutputCheckbox
             // 
             this.consoleOutputCheckbox.AutoSize = true;
-            this.consoleOutputCheckbox.Location = new System.Drawing.Point(314, 83);
+            this.consoleOutputCheckbox.Checked = true;
+            this.consoleOutputCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.consoleOutputCheckbox.Location = new System.Drawing.Point(209, 90);
             this.consoleOutputCheckbox.Name = "consoleOutputCheckbox";
             this.consoleOutputCheckbox.Size = new System.Drawing.Size(174, 24);
             this.consoleOutputCheckbox.TabIndex = 4;
@@ -85,18 +91,36 @@
             // debugCheckbox
             // 
             this.debugCheckbox.AutoSize = true;
-            this.debugCheckbox.Location = new System.Drawing.Point(505, 83);
+            this.debugCheckbox.Location = new System.Drawing.Point(400, 90);
             this.debugCheckbox.Name = "debugCheckbox";
             this.debugCheckbox.Size = new System.Drawing.Size(116, 24);
             this.debugCheckbox.TabIndex = 5;
             this.debugCheckbox.Text = "Show Debug";
             this.debugCheckbox.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(538, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Resolution";
+            // 
+            // resolutionInput
+            // 
+            this.resolutionInput.Location = new System.Drawing.Point(623, 90);
+            this.resolutionInput.Name = "resolutionInput";
+            this.resolutionInput.Size = new System.Drawing.Size(127, 27);
+            this.resolutionInput.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 149);
+            this.Controls.Add(this.resolutionInput);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.debugCheckbox);
             this.Controls.Add(this.consoleOutputCheckbox);
             this.Controls.Add(this.imageOutputCheckbox);
@@ -118,5 +142,7 @@
         private CheckBox imageOutputCheckbox;
         private CheckBox consoleOutputCheckbox;
         private CheckBox debugCheckbox;
+        private Label label2;
+        private TextBox resolutionInput;
     }
 }

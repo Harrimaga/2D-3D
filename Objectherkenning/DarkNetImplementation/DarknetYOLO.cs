@@ -84,7 +84,7 @@ namespace DarkNetImplementation
             int height = inputImage.Height;
             VectorOfMat layerOutputs = new VectorOfMat();
             string[] outNames = Network.UnconnectedOutLayersNames;
-            var blob = DnnInvoke.BlobFromImage(inputImage.ToImage<Bgr, byte>(), 1 / 255f, new Size(resizedWidth, resizedHeight), swapRB: true, crop: false);
+            Mat blob = DnnInvoke.BlobFromImage(inputImage.ToImage<Bgr, byte>(), 1 / 255f, new Size(resizedWidth, resizedHeight), swapRB: true, crop: false);
             Network.SetInput(blob);
             Network.Forward(layerOutputs, outNames);
 

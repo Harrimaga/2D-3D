@@ -3,10 +3,12 @@ using From2Dto3D.View;
 using From2Dto3D.Model;
 //using From2DTo3D_WPF;
 
+
 namespace From2Dto3D
 {
 	internal class Program
 	{
+		[STAThread]
 		static void Main(string[] args)
 		{
 			MainModel model = new();

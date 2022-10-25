@@ -23,8 +23,11 @@ namespace DarkNetImplementation
         public bool showImageOutput = true;
         public bool showConsoleOutput = true;
         public bool showDebug = false;
+        public bool savePoints = false;
+        public bool stopProgram = false;
         public float NMSThreshold = 0.4f;
         public float ConfidenceThreshold = 0.5f;
+        public List<Point> points = new();
         private DarknetYOLO ?model;
 
         public void Run()
@@ -54,9 +57,9 @@ namespace DarkNetImplementation
             model.NMSThreshold = NMSThreshold;
             model.ConfidenceThreshold = ConfidenceThreshold;
 
+            Mat frame = new();
             while (true)
             {
-                Mat frame = new();
                 try
                 {
                     cap.Read(frame);
@@ -80,10 +83,22 @@ namespace DarkNetImplementation
                 ShowOutput(results, frame);
 
                 CvInvoke.WaitKey(1000 / fps);
+
+                if (stopProgram)
+                {
+                    stopProgram = false;
+                    break;
+                }
             }
 
-            CvInvoke.DestroyWindow("Output");
+            //CvInvoke.DestroyWindow("Output");
         }
+
+        public void StopProgram()
+        {
+            stopProgram = true;
+        }
+
         private void ShowOutput(List<YoloPrediction> input, Mat frame)
         {
             foreach (YoloPrediction item in input)
@@ -93,6 +108,8 @@ namespace DarkNetImplementation
                     double xPosition = (item.Rectangle.X + item.Rectangle.Width) / 2;
                     double yPosition = (item.Rectangle.Y + item.Rectangle.Height) / 2;
                     Console.WriteLine("[INFO] Found: " + item.Label + " at position " + xPosition + "," + yPosition + " with confidence: " + item.Confidence);
+                    if (savePoints)
+                        points.Add(new Point((int)xPosition, (int)yPosition));
                 }
 
                 if (showImageOutput)

@@ -36,6 +36,8 @@
             this.debugCheckbox = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.resolutionInput = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.usingSingleImage = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -101,7 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(538, 92);
+            this.label2.Location = new System.Drawing.Point(670, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 20);
             this.label2.TabIndex = 6;
@@ -109,16 +111,38 @@
             // 
             // resolutionInput
             // 
-            this.resolutionInput.Location = new System.Drawing.Point(623, 90);
+            this.resolutionInput.Location = new System.Drawing.Point(755, 89);
             this.resolutionInput.Name = "resolutionInput";
             this.resolutionInput.Size = new System.Drawing.Size(127, 27);
             this.resolutionInput.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(796, 34);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 30);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Stop";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // usingSingleImage
+            // 
+            this.usingSingleImage.AutoSize = true;
+            this.usingSingleImage.Location = new System.Drawing.Point(522, 90);
+            this.usingSingleImage.Name = "usingSingleImage";
+            this.usingSingleImage.Size = new System.Drawing.Size(118, 24);
+            this.usingSingleImage.TabIndex = 9;
+            this.usingSingleImage.Text = "Single image";
+            this.usingSingleImage.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 149);
+            this.ClientSize = new System.Drawing.Size(967, 149);
+            this.Controls.Add(this.usingSingleImage);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.resolutionInput);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.debugCheckbox);
@@ -144,5 +168,7 @@
         private CheckBox debugCheckbox;
         private Label label2;
         private TextBox resolutionInput;
+        private Button button2;
+        private CheckBox usingSingleImage;
     }
 }

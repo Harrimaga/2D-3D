@@ -15,18 +15,15 @@ namespace SimpleGUI
         {
             pD = new PersonDetection();
 
+            //pD.videoStream = @"..\..\..\..\DarkNetImplementation\Resources\cars road.jpg";
             pD.videoStream  = @"..\..\..\..\DarkNetImplementation\Resources\test.mp4";
             pD.labels       = @"..\..\..\..\DarkNetImplementation\NetworkModels\coco.names";
             pD.weights      = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov4-tiny.weights";
             pD.cfg          = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov4-tiny.cfg";
 
-            pD.weights = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny.weights";
-            pD.cfg = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny_darknet.cfg";
+            //pD.weights = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny.weights";
+            //pD.cfg = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny_darknet.cfg";
 
-            //pD.weights = @"C:\Users\Wai Kei Law\Documents\GitHub\2D-3D\Objectherkenning\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny_darknet.cfg";
-            //pD.cfg = @"C:\Users\Wai Kei Law\Documents\GitHub\2D-3D\Objectherkenning\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny.weights";
-
-            //pD.ConfidenceThreshold = 0.3f;
             if (resolutionInput.Text != "")
             {
                 if (!int.TryParse(resolutionInput.Text, out pD.resizeImageHeight))
@@ -42,9 +39,23 @@ namespace SimpleGUI
             pD.showConsoleOutput = consoleOutputCheckbox.Checked;
             pD.showImageOutput = imageOutputCheckbox.Checked;
             pD.showDebug = debugCheckbox.Checked;
+
+            //Single image, store x and y of object
+            if (usingSingleImage.Checked)
+                pD.savePoints = true;
+            else pD.savePoints = false;
+
             pD.Run();
 
+            //Points
+            List<Point> coordinaten = pD.points;
+
             MessageBox.Show("Finished!");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pD.StopProgram();
         }
     }
 }

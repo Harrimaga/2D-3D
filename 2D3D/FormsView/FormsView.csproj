@@ -8,7 +8,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <PackAsTool>False</PackAsTool>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\2D3D\From2DTo3D.csproj" />
   </ItemGroup>

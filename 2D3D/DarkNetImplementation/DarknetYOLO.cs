@@ -123,7 +123,7 @@ namespace DarkNetImplementation
                         int y = (int)(lo[i, 1] - lo[i, 3] / 2);
 
                         var rect = new Rectangle(x, y, (int)lo[i, 2], (int)lo[i, 3]);
-
+                        
                         rect.X = rect.X < 0 ? 0 : rect.X;
                         rect.X = rect.X > width ? width - 1 : rect.X;
                         rect.Y = rect.Y < 0 ? 0 : rect.Y;

@@ -6,19 +6,8 @@
     <RootNamespace>From2Dto3D</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <!--<StartupObject>From2Dto3D.Program</StartupObject>-->
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <!--<GenerateDocumentationFile>True</GenerateDocumentationFile>-->
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <!--<EnableNETAnalyzers>True</EnableNETAnalyzers>-->
-    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <AssemblyName>From2Dto3D</AssemblyName>
-    <!--<AnalysisLevel>latest-recommended</AnalysisLevel>-->
   </PropertyGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
-</Project>
-  <ItemGroup>
-    <ProjectReference Include="..\Wpf_2D3D\Wpf_2D3D.csproj" />
-  </ItemGroup>
-
 </Project>

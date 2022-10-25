@@ -12,10 +12,10 @@ namespace DarkNetImplementation
     {
         static void Main(string[] args)
         {
-            string labels    = Path.GetFullPath(@"..\..\..\..\NetworkModels\coco.names");
-            string weights   = Path.GetFullPath(@"..\..\..\..\NetworkModels\yolov4-tiny.weights");
-            string cfg       = Path.GetFullPath(@"..\..\..\..\NetworkModels\yolov4-tiny.cfg");
-            string video     = Path.GetFullPath(@"..\..\..\..\Resources\test.mp4");
+            string labels    = Path.GetFullPath(@"..\..\..\NetworkModels\coco.names");
+            string weights   = Path.GetFullPath(@"..\..\..\NetworkModels\yolov4-tiny.weights");
+            string cfg       = Path.GetFullPath(@"..\..\..\NetworkModels\yolov4-tiny.cfg");
+            string video     = Path.GetFullPath(@"..\..\..\Resources\test.mp4");
     
             int fps = 1000;
 
@@ -34,20 +34,29 @@ namespace DarkNetImplementation
             foreach(var a in DnnInvoke.AvailableBackends) 
                 Console.WriteLine($"Target: {a.Target}  |  Backend: {a.Backend}");
             //GPU
-            if (Emgu.CV.Cuda.CudaInvoke.HasCuda)
-            {
-                Console.WriteLine("Running program with GPU");
-                model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Cuda, PreferredTarget.Cuda);
-            }
-            else
-            {
-                Console.WriteLine("Running program on CPU");
-                model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Default, PreferredTarget.Cpu);
-            }
+            //if (Emgu.CV.Cuda.CudaInvoke.HasCuda)
+            //{
+            //    Console.WriteLine("Running program with GPU");
+            //    model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Cuda, PreferredTarget.Cuda);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Running program on CPU");
+            //    model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Default, PreferredTarget.Cpu);
+            //}
+            // model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.OpenCV, PreferredTarget.Cpu);
+            //model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.VkCom, PreferredTarget.Vulkan);
+            Emgu.CV.Cuda.CudaDeviceInfo cc = new();
+            
+            Console.WriteLine(cc.Name);
+            Console.WriteLine(cc.IsCompatible);
+            Console.WriteLine(cc.CudaComputeCapability);
 
+
+            model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Cuda, PreferredTarget.CudaFp16);
             model.NMSThreshold = 0.4f;
             model.ConfidenceThreshold = 0.5f;
-
+            Stopwatch watch = Stopwatch.StartNew();
             while (true)
             {
                 Mat frame = new Mat();
@@ -58,20 +67,16 @@ namespace DarkNetImplementation
                 }
                 catch(Exception e)
                 {
-                    Console.WriteLine("VideoEnded");
                     frame = null;
                 }
                 if (frame == null)
                 {
+                    Console.WriteLine($"Video Processing time: {(int)watch.ElapsedMilliseconds/1000}s {(int)watch.ElapsedMilliseconds % 1000}");
+                    watch.Restart();
                     cap = new VideoCapture(video);
                     continue;
                 }
-                Stopwatch watch = new Stopwatch();
-                watch.Start();
                 List<YoloPrediction> results = model.Predict(frame.ToBitmap(), resizeImageWidth, resizeImageHeight);
-                watch.Stop();
-                Console.WriteLine($"Frame Processing time: {watch.ElapsedMilliseconds} ms." + $" FPS: {1000f / watch.ElapsedMilliseconds}");
-
                 //ShowImage(results, frame);
                 
                 CvInvoke.WaitKey(1000 / fps);

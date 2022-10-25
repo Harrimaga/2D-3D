@@ -17,3 +17,8 @@
   </PropertyGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
+  <ItemGroup>
+    <ProjectReference Include="..\Wpf_2D3D\Wpf_2D3D.csproj" />
+  </ItemGroup>
+
+</Project>

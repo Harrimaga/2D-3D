@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace DarkNetImplementation
 {
@@ -32,7 +33,15 @@ namespace DarkNetImplementation
 
         public void Run()
         {
-            VideoCapture cap = new VideoCapture(videoStream);
+            VideoCapture cap;
+
+            //Use 0 as input stream for webcam
+
+            //Check if it is the webcam as input stream
+            if (int.TryParse(videoStream, out int camera))
+                cap = new(camera);
+            else
+                cap = new(videoStream);
 
             if (showDebug)
             {
@@ -54,25 +63,24 @@ namespace DarkNetImplementation
                 model = new DarknetYOLO(labels, weights, cfg, PreferredBackend.Default, PreferredTarget.Cpu);
             }
 
+            //Set non-max supression threshold and confidence threshold
             model.NMSThreshold = NMSThreshold;
             model.ConfidenceThreshold = ConfidenceThreshold;
 
             Mat frame = new();
             while (true)
             {
-                try
+                if (!cap.Read(frame))
                 {
-                    cap.Read(frame);
-                    CvInvoke.Resize(frame, frame, new Size(1280, 768));
-                }
-                catch (Exception e)
-                {
+                    //CvInvoke.Resize(frame, frame, new Size(1280, 768));
                     if (showDebug)
                         Console.WriteLine("[DEBUG] VideoEnded");
                     frame = null;
                 }
+
                 if (frame == null)
                     break;
+
                 Stopwatch watch = new Stopwatch();
                 watch.Start();
                 List<YoloPrediction> results = model.Predict(frame.ToBitmap(), resizeImageWidth, resizeImageHeight);
@@ -91,7 +99,7 @@ namespace DarkNetImplementation
                 }
             }
 
-            //CvInvoke.DestroyWindow("Output");
+            CvInvoke.DestroyWindow("Output");
         }
 
         public void StopProgram()
@@ -99,6 +107,8 @@ namespace DarkNetImplementation
             stopProgram = true;
         }
 
+
+        //Output the results for a frame
         private void ShowOutput(List<YoloPrediction> input, Mat frame)
         {
             foreach (YoloPrediction item in input)
@@ -122,6 +132,12 @@ namespace DarkNetImplementation
             }
             if(showImageOutput)
                 CvInvoke.Imshow("Output", frame);
+        }
+
+        public List<Point> GetNextFrame()
+        {
+            //TODO
+            return new();
         }
     }
 }

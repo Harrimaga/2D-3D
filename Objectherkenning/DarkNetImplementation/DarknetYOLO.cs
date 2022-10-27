@@ -45,6 +45,7 @@ namespace DarkNetImplementation
             Enum.TryParse(backend.ToString(), out Emgu.CV.Dnn.Backend b);
             Enum.TryParse(target.ToString(), out Emgu.CV.Dnn.Target t);
             Network = DnnInvoke.ReadNetFromDarknet(configPath, weightsPath);
+            //Network = DnnInvoke.ReadNetFromONNX(configPath);
             Network.SetPreferableBackend(b);
             Network.SetPreferableTarget(t);
             _labels = File.ReadAllLines(labelsPath);

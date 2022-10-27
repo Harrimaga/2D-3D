@@ -19,10 +19,12 @@ namespace SimpleGUI
             pD.videoStream  = @"..\..\..\..\DarkNetImplementation\Resources\test.mp4";
             pD.labels       = @"..\..\..\..\DarkNetImplementation\NetworkModels\coco.names";
             pD.weights      = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov4-tiny.weights";
-            pD.cfg          = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov4-tiny.cfg";
+            pD.cfg = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov4-tiny.cfg";
 
-            //pD.weights = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny.weights";
-            //pD.cfg = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny_darknet.cfg";
+            //pD.weights = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7x.weights";
+            //pD.cfg = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7x_darknet.cfg";
+
+            //pD.cfg = @"..\..\..\..\DarkNetImplementation\NetworkModels\yolov7\yolov7-tiny.onnx";
 
             if (resolutionInput.Text != "")
             {
@@ -44,6 +46,9 @@ namespace SimpleGUI
             if (usingSingleImage.Checked)
                 pD.savePoints = true;
             else pD.savePoints = false;
+
+            //pD.ConfidenceThreshold = 0.8f;
+            //pD.NMSThreshold = 0.9f;
 
             pD.Run();
 

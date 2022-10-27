@@ -1,0 +1,5 @@
+﻿Emgu.CV
+Emgu.CV.UI
+Emgu.CV.Bitmap
+Emgu.CV.runtime.windows.cuda
+Emgu.runtime.windows.cuda.dnn.cnn.infer

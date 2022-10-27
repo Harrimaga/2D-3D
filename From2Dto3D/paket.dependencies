@@ -1,0 +1,16 @@
+source https://api.nuget.org/v3/index.json
+
+storage: none
+framework: net6.0
+
+nuget Emgu.CV 4.5.5.4823
+nuget Emgu.CV.Bitmap 4.5.5.4823
+nuget Emgu.CV.UI
+nuget Emgu.CV.Runtime.Windows
+
+http https://github.com/emgucv/emgucv/releases/download/4.5.5/Emgu.CV.runtime.windows.cuda.4.5.5.4823.nupkg nugets/Emgu.CV.runtime.windows.cuda.4.5.5.4823.nupkg
+http https://github.com/emgucv/emgucv/releases/download/4.5.5/Emgu.runtime.windows.cuda.dnn.cnn.infer.8.2.0.nupkg nugets/Emgu.runtime.windows.cuda.dnn.cnn.infer.8.2.0.nupkg
+
+source paket-files\github.com\nugets
+nuget Emgu.runtime.windows.cuda.dnn.cnn.infer
+nuget Emgu.CV.runtime.windows.cuda

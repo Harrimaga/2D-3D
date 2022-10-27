@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "From2Dto3D.Core", "From2Dto3D.Core\From2Dto3D.Core.csproj", "{913547BF-7211-445C-8A09-B1420A300B07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "From2Dto3D.EmguCV", "From2Dto3D.EmguCV\From2Dto3D.EmguCV.csproj", "{D5833FCA-DD71-4A91-BF05-14A5352B9235}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{763518AF-2ED9-4147-8FF5-8490EF69A298}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{913547BF-7211-445C-8A09-B1420A300B07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{913547BF-7211-445C-8A09-B1420A300B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{913547BF-7211-445C-8A09-B1420A300B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{913547BF-7211-445C-8A09-B1420A300B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5833FCA-DD71-4A91-BF05-14A5352B9235}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5833FCA-DD71-4A91-BF05-14A5352B9235}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5833FCA-DD71-4A91-BF05-14A5352B9235}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5833FCA-DD71-4A91-BF05-14A5352B9235}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93994C38-BA39-4767-9E07-B61F9AC962EA}
+	EndGlobalSection
+EndGlobal

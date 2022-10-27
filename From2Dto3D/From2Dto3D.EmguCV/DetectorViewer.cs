@@ -64,7 +64,6 @@ namespace From2Dto3D.EmguCV
 			{
 				objects.Add(new DetectedObject(Conf[0], Rect[i], getName(i, v[0]) ));
 			}
-			objects = objects;
 		}
 		public static float GetDoubleValue(Mat mat, int row, int col)
 		{
